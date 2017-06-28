@@ -26,7 +26,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
 
-     <script src="app/customLayerList.js"></script>
+  <script src="app/customLayerList.js"></script>
 
   <script>
     var href = location.href;
@@ -44,8 +44,9 @@
 
   <style>
     body {
-    padding-top: 50px;
-}
+      padding-top: 50px;
+    }
+
     #viewDiv {
       padding: 0;
       margin: 0;
@@ -59,36 +60,34 @@
   <script>
     var customLayerList;
     require([
-      "esri/Map",
+      "esri/WebMap",
       "esri/views/MapView",
-      //"demo/CustomLayerList",
+      "esri/widgets/LayerList/LayerListViewModel",
       "dojo/domReady!"
     ], function (
-      Map,
+      WebMap,
       MapView,
-      CustomLayerList
+      LayerListViewModel
     ) {
 
-      var map = new Map({
-        basemap: "dark-gray"
+      var webmap = new WebMap({
+        portalItem: { // autocasts as new PortalItem()
+          id: "e8ef160437434711b141ae953efe9049"
+        }
       });
-
-      // todo: use webmap
 
       var view = new MapView({
         container: "viewDiv",
-        zoom: 14,
-        center: [-116.51327133175782, 33.82029520464912],
-        map: map
+        map: webmap
       });
 
-      // customLayerList = new CustomLayerList({
-      //   view: view
-      // });
+      var viewModel = new LayerListViewModel({
+        view: view
+      });
 
-      // view.ui.add(customLayerList, "top-right");
-
-      $("#customLayerList").customLayerList();
+      $("#customLayerList").customLayerList({
+        viewModel: viewModel
+      });
 
     });
 
@@ -124,14 +123,17 @@
     <div class="row">
       <div class="col-md-12">
         <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones
+          HTML document.</p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-8">
         <div id="viewDiv"></div>
       </div>
-      <div class="col-md-4"><div id="customLayerList"></div></div>
+      <div class="col-md-4">
+        <div id="customLayerList"></div>
+      </div>
     </div>
   </div>
 
