@@ -14,6 +14,7 @@
     console.log(operationalItems.length);
 
     var list = $("<ul>");
+    list.addClass("list-group");
 
     vm.operationalItems.on("change", function (event) {
       console.log("changed", event);
@@ -25,6 +26,7 @@
 
         var itemNode = $("<li>");
         itemNode.text(item.title);
+        itemNode.addClass("list-group-item");
 
         list.append(itemNode);
       }, this);
