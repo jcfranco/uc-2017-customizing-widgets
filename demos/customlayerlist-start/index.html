@@ -19,8 +19,7 @@
     crossorigin="anonymous">
 
   <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-    crossorigin="anonymous">
+  <!--<link rel="stylesheet" href="app/css/bootstrap-theme.css">-->
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
@@ -38,7 +37,6 @@
         location: demoLocation + "/app"
       }]
     };
-
   </script>
   <script src="https://js.arcgis.com/4.4/"></script>
 
@@ -70,27 +68,26 @@
       LayerListViewModel
     ) {
 
-      var webmap = new WebMap({
-        portalItem: { // autocasts as new PortalItem()
-          id: "e8ef160437434711b141ae953efe9049"
-        }
+        var webmap = new WebMap({
+          portalItem: { // autocasts as new PortalItem()
+            id: "09d5b5f0bbb543ecb6dced1c05d28bab"
+          }
+        });
+
+        var view = new MapView({
+          container: "viewDiv",
+          map: webmap
+        });
+
+        var viewModel = new LayerListViewModel({
+          view: view
+        });
+
+        $("#customLayerList").customLayerList({
+          viewModel: viewModel
+        });
+
       });
-
-      var view = new MapView({
-        container: "viewDiv",
-        map: webmap
-      });
-
-      var viewModel = new LayerListViewModel({
-        view: view
-      });
-
-      $("#customLayerList").customLayerList({
-        viewModel: viewModel
-      });
-
-    });
-
   </script>
 
 </head>
