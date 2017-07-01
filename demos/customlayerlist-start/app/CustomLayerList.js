@@ -42,14 +42,19 @@
             textNode.addClass(mutedClass);
         }
 
-        function addChildren(childGroupNode, expandNode, children) {
+        function addChildren(childGroupNode, expandNode, buttonGroupNode, children) {
           var hiddenClass = "hidden";
+          var buttonGroupClass = "btn-group btn-group-sm";
 
           childGroupNode.empty();
 
           children.length ?
             expandNode.removeClass(hiddenClass) :
             expandNode.addClass(hiddenClass);
+
+          children.length ?
+            buttonGroupNode.addClass(buttonGroupClass) :
+            buttonGroupNode.removeClass(buttonGroupClass);
 
           children.forEach(function (child) {
             createItemNode(child, childGroupNode)
@@ -60,17 +65,17 @@
           // todo cleanup
           var itemNode = $('<li class="list-group-item" />');
 
-          var buttonGroupNode = $('<div class="btn-group btn-group-sm" />');
+          var buttonGroupNode = $('<div />');
           buttonGroupNode.css("margin-right", "10px");
           itemNode.append(buttonGroupNode);
 
-          var toggleNode = $('<button type="button" class="btn btn-default" />');
+          var toggleNode = $('<button type="button" class="btn btn-default btn-sm" />');
           buttonGroupNode.append(toggleNode);
 
           var toggleIconNode = $('<span class="glyphicon glyphicon" aria-hidden="true" />');
           toggleNode.append(toggleIconNode);
 
-          var expandNode = $('<button type="button" class="btn btn-default" />');
+          var expandNode = $('<button type="button" class="btn btn-default btn-sm" />');
           buttonGroupNode.append(expandNode);
 
           var expandIconNode = $('<span class="glyphicon glyphicon glyphicon glyphicon-triangle-right" aria-hidden="true" />');
@@ -105,9 +110,9 @@
             setMutedClass(item, textNode);
           });
 
-          addChildren(childGroupNode, expandNode, item.children);
+          addChildren(childGroupNode, expandNode, buttonGroupNode, item.children);
           item.children.on("change", function () {
-            addChildren(childGroupNode, expandNode, item.children);
+            addChildren(childGroupNode, expandNode, buttonGroupNode, item.children);
           });
 
           expandNode.on("click", function (event) {
