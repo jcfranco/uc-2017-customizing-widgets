@@ -65,7 +65,7 @@
           // todo cleanup
           var itemNode = $('<li class="list-group-item" />');
 
-          var buttonGroupNode = $('<div />');
+          var buttonGroupNode = $('<span />');
           buttonGroupNode.css("margin-right", "10px");
           itemNode.append(buttonGroupNode);
 
