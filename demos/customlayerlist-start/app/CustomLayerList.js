@@ -1,87 +1,134 @@
 (function ($) {
 
   $.fn.customLayerList = function (options) {
-    // set some defaults
+    // todo: defaults?
     var defaults = {};
-    // merge
     var options = $.extend({}, defaults, options);
 
     var vm = options.viewModel;
-    var obj = $(this);
+    var operationalItems = vm && vm.operationalItems;
 
-    var operationalItems = vm.operationalItems;
+    var groupNode = $('<ul class="list-group">');
 
-    var groupNode = $('<div class="list-group">');
+    if (operationalItems) {
+      operationalItems.on("change", function () {
+        groupNode.empty();
 
-    vm.operationalItems.on("change", function () {
-      groupNode.empty();
+        function setUpdatingClass(item, updatingNode) {
+          var hiddenClass = "hidden";
 
-      function setUpdatingClass(item, updatingNode) {
-        item.updating ?
-          updatingNode.removeClass("hidden") :
-          updatingNode.addClass("hidden");
-      }
+          item.updating ?
+            updatingNode.removeClass(hiddenClass) :
+            updatingNode.addClass(hiddenClass);
+        }
 
-      function setActiveClass(item, itemNode) {
-        item.visible ? itemNode.addClass("active") : itemNode.removeClass("active");
-      }
+        function setVisible(item, toggleIconNode) {
+          var openGlyph = "glyphicon-eye-open";
+          var closeGlyph = "glyphicon-eye-close";
 
-      function setDisabledClass(item, itemNode) {
-        item.visibleAtCurrentScale ? itemNode.removeClass("disabled") : itemNode.addClass("disabled");
-      }
+          if (item.visible) {
+            toggleIconNode.addClass(openGlyph).removeClass(closeGlyph);
+          }
+          else {
+            toggleIconNode.addClass(closeGlyph).removeClass(openGlyph);
+          }
+        }
 
-      function addChildren(childGroupNode, children) {
-        childGroupNode.empty();
+        function setMutedClass(item, textNode) {
+          var mutedClass = "text-muted";
 
-        children.length ? childGroupNode.removeClass("hidden") :
-          childGroupNode.addClass("hidden");
+          item.visibleAtCurrentScale ?
+            textNode.removeClass(mutedClass) :
+            textNode.addClass(mutedClass);
+        }
 
-        children.forEach(function (child) {
-          createItemNode(child, childGroupNode)
-        });
-      }
+        function addChildren(childGroupNode, expandNode, children) {
+          var hiddenClass = "hidden";
 
-      function createItemNode(item, parentNode) {
-        var itemNode = $('<button type="button" class="list-group-item" />');
-        itemNode.text(item.title);
-        var updatingNode = $('<span class="badge"><span class="glyphicon glyphicon-refresh" aria-hidden="true" /></span>');
-        itemNode.append(updatingNode);
-        var childGroupNode = $('<div class="list-group hidden" />');
-        itemNode.append(childGroupNode);
+          childGroupNode.empty();
 
-        setActiveClass(item, itemNode);
-        item.watch("visible", function () {
-          setActiveClass(item, itemNode);
-        });
+          children.length ?
+            expandNode.removeClass(hiddenClass) :
+            expandNode.addClass(hiddenClass);
 
-        setUpdatingClass(item, updatingNode);
-        item.watch("updating", function () {
+          children.forEach(function (child) {
+            createItemNode(child, childGroupNode)
+          });
+        }
+
+        function createItemNode(item, parentNode) {
+          // todo cleanup
+          var itemNode = $('<li class="list-group-item" />');
+
+          var buttonGroupNode = $('<div class="btn-group btn-group-sm" />');
+          buttonGroupNode.css("margin-right", "10px");
+          itemNode.append(buttonGroupNode);
+
+          var toggleNode = $('<button type="button" class="btn btn-default" />');
+          buttonGroupNode.append(toggleNode);
+
+          var toggleIconNode = $('<span class="glyphicon glyphicon" aria-hidden="true" />');
+          toggleNode.append(toggleIconNode);
+
+          var expandNode = $('<button type="button" class="btn btn-default" />');
+          buttonGroupNode.append(expandNode);
+
+          var expandIconNode = $('<span class="glyphicon glyphicon glyphicon glyphicon-triangle-right" aria-hidden="true" />');
+          expandNode.append(expandIconNode);
+
+          var textNode = $('<span />');
+          textNode.text(item.title);
+          itemNode.append(textNode);
+
+          var updatingNode = $('<span class="badge" />');
+          itemNode.append(updatingNode);
+
+          var updatingIconNode = $('<span class="glyphicon glyphicon-repeat gly-spin" aria-hidden="true" />');
+          updatingNode.append(updatingIconNode);
+
+          var childGroupNode = $('<ul class="list-group hidden" />');
+          childGroupNode.css("margin-top", "15px");
+          itemNode.append(childGroupNode);
+
+          setVisible(item, toggleIconNode);
+          item.watch("visible", function () {
+            setVisible(item, toggleIconNode);
+          });
+
           setUpdatingClass(item, updatingNode);
+          item.watch("updating", function () {
+            setUpdatingClass(item, updatingNode);
+          });
+
+          setMutedClass(item, textNode);
+          item.watch("visibleAtCurrentScale", function () {
+            setMutedClass(item, textNode);
+          });
+
+          addChildren(childGroupNode, expandNode, item.children);
+          item.children.on("change", function () {
+            addChildren(childGroupNode, expandNode, item.children);
+          });
+
+          expandNode.on("click", function (event) {
+            expandIconNode.toggleClass("glyphicon-triangle-right glyphicon-triangle-bottom");
+            childGroupNode.toggleClass("hidden");
+          });
+
+          toggleNode.on("click", function (event) {
+            item.visible = !item.visible;
+            event.stopPropagation();
+          });
+
+          parentNode.append(itemNode);
+        }
+
+        operationalItems.forEach(function (item) {
+          createItemNode(item, groupNode);
         });
 
-        setDisabledClass(item, itemNode);
-        item.watch("visibleAtCurrentScale", function () {
-          setDisabledClass(item, itemNode);
-        });
-
-        addChildren(childGroupNode, item.children);
-        item.children.on("change", function () {
-          addChildren(childGroupNode, item.children);
-        });
-
-        itemNode.on("click", function (event) {
-          item.visible = !item.visible;
-          event.stopPropagation();
-        });
-
-        parentNode.append(itemNode);
-      }
-
-      operationalItems.forEach(function (item) {
-        createItemNode(item, groupNode);
       });
-
-    });
+    }
 
     return this.append(groupNode);
   };
