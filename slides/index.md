@@ -19,6 +19,10 @@
 
 ---
 
+![questions](./images/continue.gif)
+
+---
+
 # About Customizing Widgets
 
  What do we mean by customizing?
@@ -431,9 +435,13 @@ _...then magic!_
 
 # Questions?
 
+![questions](./images/questions.gif)
+
 ---
 
 # Thank you!
+
+![questions](./images/thanks.gif)
 
 ---
 
