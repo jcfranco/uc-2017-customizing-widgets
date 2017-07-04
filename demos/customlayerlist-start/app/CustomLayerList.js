@@ -1,7 +1,6 @@
 (function ($) {
 
   $.fn.customLayerList = function (options) {
-    // todo: defaults?
     var defaults = {};
     var options = $.extend({}, defaults, options);
 
@@ -48,13 +47,14 @@
 
           childGroupNode.empty();
 
-          children.length ?
-            expandNode.removeClass(hiddenClass) :
+          if (children.length) {
+            expandNode.removeClass(hiddenClass);
+            buttonGroupNode.addClass(buttonGroupClass);
+          }
+          else {
             expandNode.addClass(hiddenClass);
-
-          children.length ?
-            buttonGroupNode.addClass(buttonGroupClass) :
             buttonGroupNode.removeClass(buttonGroupClass);
+          }
 
           children.forEach(function (child) {
             createItemNode(child, childGroupNode)
@@ -62,7 +62,6 @@
         }
 
         function createItemNode(item, parentNode) {
-          // todo cleanup
           var itemNode = $('<li class="list-group-item" />');
 
           var buttonGroupNode = $('<span />');
