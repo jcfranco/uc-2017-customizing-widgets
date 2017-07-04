@@ -12,9 +12,9 @@
 
 - About Customizing Widgets
 - Prerequisites
-- ViewModels
-- Views
 - Theming
+- Views
+- ViewModels
 - Q & A
 
 ---
@@ -23,10 +23,9 @@
 
  What do we mean by customizing?
 
-- Extending an existing widgets view or viewModel
+- Theming widgets
 - Recreating a view with or without our widget framework
-- Creating a theme for widgets
-- Theming a widget
+- Extending an existing widgets view or viewModel
 
 ---
 
