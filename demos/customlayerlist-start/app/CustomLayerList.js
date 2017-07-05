@@ -64,8 +64,15 @@
         function createItemNode(item, parentNode) {
           var itemNode = $('<li class="list-group-item" />');
 
+          var updatingNode = $('<span class="badge" />');
+          itemNode.append(updatingNode);
+
+          var updatingIconNode = $('<span class="glyphicon glyphicon-repeat gly-spin" aria-hidden="true" />');
+          updatingNode.append(updatingIconNode);
+
           var buttonGroupNode = $('<span />');
           buttonGroupNode.css("margin-right", "10px");
+          buttonGroupNode.css("display", "inline-block");
           itemNode.append(buttonGroupNode);
 
           var toggleNode = $('<button type="button" class="btn btn-default btn-sm" />');
@@ -83,12 +90,6 @@
           var textNode = $('<span />');
           textNode.text(item.title);
           itemNode.append(textNode);
-
-          var updatingNode = $('<span class="badge" />');
-          itemNode.append(updatingNode);
-
-          var updatingIconNode = $('<span class="glyphicon glyphicon-repeat gly-spin" aria-hidden="true" />');
-          updatingNode.append(updatingIconNode);
 
           var childGroupNode = $('<ul class="list-group hidden" />');
           childGroupNode.css("margin-top", "15px");
