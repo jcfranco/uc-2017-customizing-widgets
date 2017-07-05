@@ -37,7 +37,7 @@
 
 ---
 
-# Theming
+# Theming (Level I)
 
 ---
 
@@ -257,7 +257,7 @@ Our widgets are separated into views and viewmodels
 
 ---
 
-# Views
+# Views (Level II)
 
 (The face)
 
@@ -289,7 +289,7 @@ We're going to customize a widget view using:
 
 ---
 
-# ViewModels
+# ViewModels (Level III)
 
 (The brain)
 
