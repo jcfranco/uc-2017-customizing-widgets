@@ -149,6 +149,7 @@ _...then magic!_
 
 ---
 
+
 # Esri Widgets
 
 `esri/widgets/Widget`: Our new widget framework
@@ -178,15 +179,6 @@ render() {
   return <div>{this.title}</div>;
 }
 ```
-
----
-
-# Node
-
-- Run JS on the desktop
-- Synchronous
-- Package manager bundled with Node install (npm)
-  - [lots of packages available](https://www.npmjs.com/)
 
 ---
 
@@ -259,6 +251,38 @@ class Foo extends declared(Accessor) {
 
 ---
 
+# Views
+
+(The face)
+
+- `esri/widgets/Widget`
+- Uses ViewModel APIs to render the UI
+- View-specific logic resides here
+
+---
+
+# Views: Why?
+
+- Separates concerns
+- Framework compatibility
+
+---
+
+# Views: Let's customize!
+
+We're going to customize a widget view using:
+
+- `esri/widgets/Widget`
+- JavaScript (plain old vanilla js)
+
+---
+
+# Demo: Restyle View
+
+<!-- .slide: data-background="images/demo-background.png" -->
+
+---
+
 # ViewModels & Views
 
 Our widgets are separated into views and viewmodels
@@ -306,38 +330,6 @@ class Foo extends declared(Bar) {
 ---
 
 # Demo: Custom View
-
-<!-- .slide: data-background="images/demo-background.png" -->
-
----
-
-# Views
-
-(The face)
-
-- `esri/widgets/Widget`
-- Uses ViewModel APIs to render the UI
-- View-specific logic resides here
-
----
-
-# Views: Why?
-
-- Separates concerns
-- Framework compatibility
-
----
-
-# Views: Let's customize!
-
-We're going to customize a widget view using:
-
-- `esri/widgets/Widget`
-- JavaScript (plain old vanilla js)
-
----
-
-# Demo: Restyle View
 
 <!-- .slide: data-background="images/demo-background.png" -->
 
