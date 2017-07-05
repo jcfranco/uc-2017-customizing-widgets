@@ -10,12 +10,11 @@
 
 # Agenda
 
-- About Customizing Widgets
-- Approaches
-- Theming
-- Views
-- ViewModels
-- Q & A
+- Customization Approaches      <!-- .element: class="fragment" data-fragment-index="1" -->
+  - Authoring theme             <!-- .element: class="fragment" data-fragment-index="2" -->
+  - Recreating view             <!-- .element: class="fragment" data-fragment-index="3" -->
+  - Extending view              <!-- .element: class="fragment" data-fragment-index="4" -->
+- Q & A                         <!-- .element: class="fragment" data-fragment-index="5" -->
 
 ---
 
@@ -23,17 +22,11 @@
 
 ---
 
-# About Customizing Widgets
+# Customization Approaches
 
- What do we mean by customizing?
-
-- Theming widgets
-- Recreating a view with or without our widget framework
-- Extending an existing widgets view or viewModel
-
----
-
-# Approaches
+- Authoring a theme
+- Recreating a view
+- Extending a view
 
 ---
 
@@ -149,6 +142,11 @@ _...then magic!_
 
 ---
 
+# Theming (Level I)
+
+[TODO: SUMMARIZE]
+
+---
 
 # Esri Widgets
 
@@ -289,6 +287,12 @@ We're going to customize a widget view using:
 
 ---
 
+# Views (Level II)
+
+[TODO: SUMMARIZE]
+
+---
+
 # ViewModels (Level III)
 
 (The brain)
@@ -335,7 +339,21 @@ class Foo extends declared(Bar) {
 
 ---
 
-## Suggested Sessions
+# ViewModels (Level III)
+
+[TODO: SUMMARIZE]
+
+---
+
+# Conclusion
+
+- Authored a theme      <!-- .element: class="fragment" data-fragment-index="1" -->
+- Recreated a view      <!-- .element: class="fragment" data-fragment-index="2" -->
+- Extended a view       <!-- .element: class="fragment" data-fragment-index="3" -->
+
+---
+
+## Suggested Session
 
 - [Developing Your Own Widget with the ArcGIS API for JavaScript
 ](https://userconference2017.schedule.esri.com/schedule/603662896)
