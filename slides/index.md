@@ -30,6 +30,7 @@
 
 ---
 
+<!-- Presenter: Alan -->
 # Theming (Level I)
 
 ---
@@ -148,6 +149,7 @@ _...then magic!_
 
 ---
 
+<!-- Presenter: JC -->
 # Esri Widgets
 
 `esri/widgets/Widget`: Our new widget framework
@@ -234,6 +236,7 @@ Our widgets are separated into views and viewmodels
 
 ---
 
+<!-- Presenter: Matt -->
 # Views (Level II)
 
 (The face)
@@ -272,6 +275,7 @@ We're going to customize a widget view using:
 
 ---
 
+<!-- Presenter: JC -->
 # ViewModels (Level III)
 
 (The brain)
