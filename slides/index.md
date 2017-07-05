@@ -11,7 +11,7 @@
 # Agenda
 
 - About Customizing Widgets
-- Prerequisites
+- Approaches
 - Theming
 - Views
 - ViewModels
@@ -33,71 +33,119 @@
 
 ---
 
-# Prerequisites
-
-- Accessor (`esri/core/Accessor`)
-- TypeScript
+# Approaches
 
 ---
 
-## Accessor
-
-- JavaScript API Foundation
-- Consistent developer experience
-- TypeScript support
+# Theming
 
 ---
 
-## Accessor - Unified Object Constructor
+# Why Theme?
+- Branding
+- Match the map
+- Contrast with the map
+- Based on the environment
+- User-specific (e.g. bigger buttons)
 
-```js
-var view = new MapView({
-  container: "viewDiv",
-  map: map
-});
+---
 
-var symbol = new SimpleMarkerSymbol({
-  style: "square",
-  color: "blue"
-});
+# Sass
 
-var widget = new BasemapToggle({
-  view: view,
-  nextBasemap: "hybrid"
-});
+#### A powerful scripting language for producing CSS.
+
+---
+
+### Why Sass?
+- Modular and DRY
+- Organized code
+- Makes **theming** easy
+
+---
+
+### Compiling
+
+---
+
+# Let's Create a Theme!
+
+### Your Theme
+1. Create your theme directory.
+  -   `esri/themes/[your-theme-name]/`
+1. Create a Sass file in your directory.
+  - `main.scss`
+
+```
+  <!-- in your app -->
+  <link rel="stylesheet"
+        href="esri/themes/[your-theme-name]/main.css">
 ```
 
 ---
 
-## Accessor - Defining Properties
-
-```js
-var Foo = Accessor.createSubclass({
-  properties: {
-
-    // read-only
-    foo: { readOnly: true, value: new Foo() },
-
-    // aliased
-    bar: { aliasOf: "foo" },
-
-    // autocast
-    baz: { type: SomeClass }
-  }
-});
-```
+Before writing a bunch of CSS selectors, let's look at the
+# Theming Approach.
 
 ---
 
-## Accessor - Property watching
+# Theming Approach
 
-```js
-// watch for changes using a property chain
-view.watch("map.basemap.title", handleTitleChange);
+Three main areas:
+- Color
+- Size
+- Typography
 
-// watch for changes to multiple properties
-view.watch("stationary, interacting", handleViewPropChange);
+---
+
+# Theming Approach
+
+Three main files:
+- `base/_colorVariables.scss`
+- `base/_sizes.scss`
+- `base/_type.scss`
+
+---
+
+# Theming Approach
+
+Default:
 ```
+// Inside base/_colorVariables.scss
+$text_color : #6e6e6e !default ;
+```
+
+Your theme:
+```
+// Inside esri/themes/[your-theme-name]/main.scss
+$text_color : #0079c1;
+```
+
+Any value assignment overrides the `!default` value.
+
+But wait...there's more!
+
+---
+
+# Theming Approach
+
+Override the four main **color** variables...
+
+```
+$text_color            : #d1d1d1;
+$background_color      : #242424;
+$anchor_color          : #9e9e8e;
+$button_text_color     : #adadad;
+```
+
+_...then magic!_
+
+[Theming Guide](https://developers.arcgis.com/javascript/latest/guide/styling/index.html)
+
+---
+
+# Demo: Theming
+
+<!-- .slide: data-background="images/demo-background.png" -->
 
 ---
 
@@ -290,118 +338,6 @@ We're going to customize a widget view using:
 ---
 
 # Demo: Restyle View
-
-<!-- .slide: data-background="images/demo-background.png" -->
-
----
-
-# Theming
-
----
-
-# Why Theme?
-- Branding
-- Match the map
-- Contrast with the map
-- Based on the environment
-- User-specific (e.g. bigger buttons)
-
----
-
-# Sass
-
-#### A powerful scripting language for producing CSS.
-
----
-
-### Why Sass?
-- Modular and DRY
-- Organized code
-- Makes **theming** easy
-
----
-
-### Compiling
-
----
-
-# Let's Create a Theme!
-
-### Your Theme
-1. Create your theme directory.
-  -   `esri/themes/[your-theme-name]/`
-1. Create a Sass file in your directory.
-  - `main.scss`
-
-```
-  <!-- in your app -->
-  <link rel="stylesheet"
-        href="esri/themes/[your-theme-name]/main.css">
-```
-
----
-
-Before writing a bunch of CSS selectors, let's look at the
-# Theming Approach.
-
----
-
-# Theming Approach
-
-Three main areas:
-- Color
-- Size
-- Typography
-
----
-
-# Theming Approach
-
-Three main files:
-- `base/_colorVariables.scss`
-- `base/_sizes.scss`
-- `base/_type.scss`
-
----
-
-# Theming Approach
-
-Default:
-```
-// Inside base/_colorVariables.scss
-$text_color : #6e6e6e !default ;
-```
-
-Your theme:
-```
-// Inside esri/themes/[your-theme-name]/main.scss
-$text_color : #0079c1;
-```
-
-Any value assignment overrides the `!default` value.
-
-But wait...there's more!
-
----
-
-# Theming Approach
-
-Override the four main **color** variables...
-
-```
-$text_color            : #d1d1d1;
-$background_color      : #242424;
-$anchor_color          : #9e9e8e;
-$button_text_color     : #adadad;
-```
-
-_...then magic!_
-
-[Theming Guide](https://developers.arcgis.com/javascript/latest/guide/styling/index.html)
-
----
-
-# Demo: Theming
 
 <!-- .slide: data-background="images/demo-background.png" -->
 
