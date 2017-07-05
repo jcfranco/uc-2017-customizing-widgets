@@ -251,6 +251,12 @@ class Foo extends declared(Accessor) {
 
 ---
 
+# ViewModels & Views
+
+Our widgets are separated into views and viewmodels
+
+---
+
 # Views
 
 (The face)
@@ -280,12 +286,6 @@ We're going to customize a widget view using:
 # Demo: Restyle View
 
 <!-- .slide: data-background="images/demo-background.png" -->
-
----
-
-# ViewModels & Views
-
-Our widgets are separated into views and viewmodels
 
 ---
 
