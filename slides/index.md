@@ -182,70 +182,49 @@ render() {
 
 # TypeScript
 
-- Superset of JavaScript
-- Compiled to JavaScript
-- Statically type-checked
-- Syntactic sugar... sweet!
-  - Use ES6 syntax while targeting ES5 environments
-- Decorators
-
----
-
-# TS = type safety
+- Typed JavaScript <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ```ts
 let view: MapView | SceneView;
 
-// ...
+// later...
 
-/*
- * TS2322: Type '"not-a-view"' is not assignable
- * to type 'MapView | SceneView'.
- */
+// TS2322: Type '"not-a-view"' is not assignable
+// to type 'MapView | SceneView'.
 view = "not-a-view";
 ```
+<!-- .element: class="fragment" data-fragment-index="2" -->
 
 ---
 
-# Typings!
+# TypeScript
 
-Help describe what things are:
+- JS of the future, now
 
 ```ts
-type PresenterNames = "Alan" | "Matt" | "JC";
+// const
+const numbers = [1, 2, 3];
 
-interface Person {
-  name: string;
-  age: number;
-}
+// fat arrow functions
+letters.forEach(letter => console.log(letter));
 
-interface Presenter extends Person {
-  name: PresenterNames;
+// template literals
+const myString = `last number: ${ numbers[ numbers.length - 1 ] }`;
+
+// decorators
+class Example {
+  @log
+  stringify(item: object): string { /* ... */ }
 }
 ```
+<!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
-# Decorators!
+# TypeScript
 
-- Enhance classes, properties, methods, parameters
-
-```ts
-class Foo extends declared(Accessor) {
-
-  // read-only
-  @property({ readOnly: true })
-  foo = new Foo();
-
-  // aliased
-  @property({ aliasOf: "foo" })
-  bar;
-
-  // autocast
-  @property({ type: SomeClass })
-  baz;
-}
-```
+- IDE support
+  - Visual Studio, WebStorm, Sublime, and more!  <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
