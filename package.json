@@ -5,5 +5,9 @@
   "dependencies": {
     "highlightjs": "^9.10.0",
     "reveal.js": "^3.5.0"
+  },
+  "devDependencies": {
+    "dojo-typings": "^1.11.6",
+    "typescript": "^2.4.1"
   }
 }
