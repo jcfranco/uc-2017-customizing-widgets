@@ -31,7 +31,7 @@
 ---
 
 <!-- Presenter: Alan -->
-# Theming (Level I)
+# Level I: Theming
 
 ---
 
@@ -143,7 +143,7 @@ _...then magic!_
 
 ---
 
-# Theming (Level I)
+# Level I: Theming Recap
 
 [TODO: SUMMARIZE]
 
@@ -237,7 +237,7 @@ Our widgets are separated into views and viewmodels
 ---
 
 <!-- Presenter: Matt -->
-# Views (Level II)
+# Level II: Views
 
 (The face)
 
@@ -278,14 +278,14 @@ Lets create a custom widget view.
 
 ---
 
-# Views (Level II)
+# Level II: Views Recap
 
 [TODO: SUMMARIZE]
 
 ---
 
 <!-- Presenter: JC -->
-# ViewModels (Level III)
+# Level III: ViewModels
 
 (The brain)
 
@@ -331,7 +331,7 @@ class Foo extends declared(Bar) {
 
 ---
 
-# ViewModels (Level III)
+# Level III: ViewModels Recap
 
 [TODO: SUMMARIZE]
 
