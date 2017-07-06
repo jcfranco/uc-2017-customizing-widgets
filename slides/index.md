@@ -182,54 +182,6 @@ render() {
 
 ---
 
-# TypeScript
-
-- Typed JavaScript <!-- .element: class="fragment" data-fragment-index="1" -->
-
-```ts
-let view: MapView | SceneView;
-
-// later...
-
-// TS2322: Type '"not-a-view"' is not assignable
-// to type 'MapView | SceneView'.
-view = "not-a-view";
-```
-<!-- .element: class="fragment" data-fragment-index="2" -->
-
----
-
-# TypeScript
-
-- JS of the future, now
-
-```ts
-// const
-const numbers = [1, 2, 3];
-
-// fat arrow functions
-letters.forEach(letter => console.log(letter));
-
-// template literals
-const myString = `last number: ${ numbers[ numbers.length - 1 ] }`;
-
-// decorators
-class Example {
-  @log
-  stringify(item: object): string { /* ... */ }
-}
-```
-<!-- .element: class="fragment" data-fragment-index="1" -->
-
----
-
-# TypeScript
-
-- IDE support
-  - Visual Studio, WebStorm, Sublime, and more!  <!-- .element: class="fragment" data-fragment-index="1" -->
-
----
-
 # Widget Composition
 
 Our widgets are composed of views and viewmodels.
@@ -259,13 +211,13 @@ Lets talk about them!
 - [Widget base class](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Widget.html)
   - `esri/widgets/Widget`
   - Lifecycle mentioned earlier
-  - `viewModel` property      
+  - `viewModel` property
 
 ---
 
 # Level II: Working with Views
 
-Example: [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) widget 
+Example: [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) widget
 
 - [LayerList.tsx](https://github.com/Esri/arcgis-js-api/blob/4master/widgets/LayerList.tsx) (View)
 - [LayerList.scss](https://github.com/Esri/arcgis-js-api/blob/4master/themes/base/widgets/_LayerList.scss) (Theme)
@@ -345,6 +297,54 @@ class Foo extends declared(Bar) {
 
 }
 ```
+
+---
+
+# TypeScript
+
+- Typed JavaScript <!-- .element: class="fragment" data-fragment-index="1" -->
+
+```ts
+let view: MapView | SceneView;
+
+// later...
+
+// TS2322: Type '"not-a-view"' is not assignable
+// to type 'MapView | SceneView'.
+view = "not-a-view";
+```
+<!-- .element: class="fragment" data-fragment-index="2" -->
+
+---
+
+# TypeScript
+
+- JS of the future, now
+
+```ts
+// const
+const numbers = [1, 2, 3];
+
+// fat arrow functions
+letters.forEach(letter => console.log(letter));
+
+// template literals
+const myString = `last number: ${ numbers[ numbers.length - 1 ] }`;
+
+// decorators
+class Example {
+  @log
+  stringify(item: object): string { /* ... */ }
+}
+```
+<!-- .element: class="fragment" data-fragment-index="1" -->
+
+---
+
+# TypeScript
+
+- IDE support
+  - Visual Studio, WebStorm, Sublime, and more!  <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
