@@ -21,6 +21,10 @@
             updatingNode.addClass(hiddenClass);
         }
 
+        function setText(title, textNode) {
+          textNode.text(title);
+        }
+
         function setVisible(item, toggleIconNode) {
           var openGlyph = "glyphicon-eye-open";
           var closeGlyph = "glyphicon-eye-close";
@@ -62,6 +66,7 @@
         }
 
         function createItemNode(item, parentNode) {
+          console.log(item);
           var itemNode = $('<li class="list-group-item" />');
 
           var updatingNode = $('<span class="badge" />');
@@ -88,12 +93,16 @@
           expandNode.append(expandIconNode);
 
           var textNode = $('<span />');
-          textNode.text(item.title);
           itemNode.append(textNode);
 
           var childGroupNode = $('<ul class="list-group hidden" />');
           childGroupNode.css("margin-top", "15px");
           itemNode.append(childGroupNode);
+
+          setText(item.title, textNode);
+          item.watch("title", function () {
+            setText(item.title, textNode);
+          });
 
           setVisible(item, toggleIconNode);
           item.watch("visible", function () {
