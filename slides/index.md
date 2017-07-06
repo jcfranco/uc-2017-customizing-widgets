@@ -230,49 +230,62 @@ class Example {
 
 ---
 
-# ViewModels & Views
+# Widget Composition
 
-Our widgets are separated into views and viewmodels
+Our widgets are composed of views and viewmodels.
+
+Lets talk about them!
 
 ---
 
 <!-- Presenter: Matt -->
 # Level II: Views
 
-(The face)
-
-- `esri/widgets/Widget`
-- Uses ViewModel APIs to render the UI
-- View-specific logic resides here
-
----
-
-# Working with Views
-
-- Example: [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) widget
-
-- [LayerList.tsx](https://github.com/Esri/arcgis-js-api/blob/4master/widgets/LayerList.tsx) (widget view)
-- [LayerList.scss](https://github.com/Esri/arcgis-js-api/blob/4master/themes/base/widgets/_LayerList.scss)
+- Presentation of the Widget              <!-- .element: class="fragment" data-fragment-index="1" -->
+- Uses ViewModel APIs to render the UI    <!-- .element: class="fragment" data-fragment-index="2" -->
+- View-specific logic resides here        <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 
 # Views: Why?
 
-- Separates concerns
-- Framework compatibility
+- Separates concerns        <!-- .element: class="fragment" data-fragment-index="1" -->
+- Framework compatibility   <!-- .element: class="fragment" data-fragment-index="2" -->
+
+---
+
+# Level II: Widget base class
+
+- [Widget base class](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Widget.html)
+  - `esri/widgets/Widget`
+  - Lifecycle mentioned earlier
+  - `viewModel` property      
+
+---
+
+# Level II: Working with Views
+
+Example: [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) widget 
+
+- [LayerList.tsx](https://github.com/Esri/arcgis-js-api/blob/4master/widgets/LayerList.tsx) (View)
+- [LayerList.scss](https://github.com/Esri/arcgis-js-api/blob/4master/themes/base/widgets/_LayerList.scss) (Theme)
 
 ---
 
 # Views: Let's customize!
 
-Lets create a custom widget view.
+Lets create a custom widget view. <!-- .element: class="fragment" data-fragment-index="1" -->
 
-- jQuery
-- Bootstrap
+Using <!-- .element: class="fragment" data-fragment-index="2" -->
+
+- jQuery <!-- .element: class="fragment" data-fragment-index="3" -->
+- Bootstrap <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 
-# Demo: Create custom LayerList view
+# Demo
+
+Lets create a custom LayerList view for a Bootstrap app
 
 <!-- .slide: data-background="images/demo-background.png" -->
 
@@ -280,7 +293,15 @@ Lets create a custom widget view.
 
 # Level II: Views Recap
 
-[TODO: SUMMARIZE]
+What have we learned? <!-- .element: class="fragment" data-fragment-index="1" -->
+
+- View <!-- .element: class="fragment" data-fragment-index="2" -->
+  - Face of the widget <!-- .element: class="fragment" data-fragment-index="3" -->
+  - Renders the viewModel brains <!-- .element: class="fragment" data-fragment-index="4" -->
+  - Separation allows easy framework integration <!-- .element: class="fragment" data-fragment-index="5" -->
+- Demo <!-- .element: class="fragment" data-fragment-index="6" -->
+  - Where to get widget info in the API <!-- .element: class="fragment" data-fragment-index="7" -->
+  - How to create a custom view in another framework <!-- .element: class="fragment" data-fragment-index="8" -->
 
 ---
 
