@@ -58,26 +58,27 @@
       LayerListViewModel
     ) {
 
-        var webmap = new WebMap({
-          portalItem: { // autocasts as new PortalItem()
-            id: "09d5b5f0bbb543ecb6dced1c05d28bab"
-          }
-        });
-
-        var view = new MapView({
-          container: "viewDiv",
-          map: webmap
-        });
-
-        var viewModel = new LayerListViewModel({
-          view: view
-        });
-
-        $("#customLayerList").customLayerList({
-          viewModel: viewModel
-        });
-
+      var webmap = new WebMap({
+        portalItem: { // autocasts as new PortalItem()
+          id: "1c909e31eebd4d4cb7d314dc3923a690"
+        }
       });
+
+      var view = new MapView({
+        container: "viewDiv",
+        map: webmap
+      });
+
+      var viewModel = new LayerListViewModel({
+        view: view
+      });
+
+      $("#customLayerList").customLayerList({
+        viewModel: viewModel
+      });
+
+    });
+
   </script>
 
 </head>
@@ -120,7 +121,7 @@
     </div>
     <div class="row" id="map">
       <div class="col-md-7">
-        <div id="viewDiv"></div>
+        <div id="viewDiv" class="well"></div>
       </div>
       <div class="col-md-5">
         <h2>Layers</h2>
