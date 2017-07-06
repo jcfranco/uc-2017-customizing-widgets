@@ -348,7 +348,9 @@ class Example {
 
 ---
 
-# Demo: Custom View
+# Demo: Extending a View
+
+<img src="images/demo-extending-view.png" width="50%"/>
 
 <!-- .slide: data-background="images/demo-background.png" -->
 
