@@ -1,5 +1,6 @@
 
 1. Open the index HTML page and add the script for the jQuery plugin
+
 ```
   <script src="app/CustomLayerList.js"></script>
 ```
@@ -27,6 +28,7 @@ var viewModel = new LayerListViewModel({
 
 5. Initialize the customlayerList jQuery plugin passing the viewModel in options argument
 
+```
 $("#customLayerList").customLayerList({
   viewModel: viewModel
 });
@@ -35,7 +37,6 @@ $("#customLayerList").customLayerList({
 6. View page and notice the following `$(...).customLayerList is not a function`.
 
 7. Open `CustomLayerList.js` to start creating the jQuery plugin.
-
 
 8. Add the code to the jQuery plugin to get the plugin setup. Error should be gone now
 
@@ -215,7 +216,7 @@ function addChildren(childGroupNode, expandNode, buttonGroupNode, children) {
 
 15. Custom bootstrap layerlist should be working!
 
-Optional: Add custom bootstrap theme
+16. Optional: Add custom bootstrap theme
 
 ```
 <!-- Optional theme -->

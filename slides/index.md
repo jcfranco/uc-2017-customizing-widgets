@@ -287,6 +287,8 @@ Using <!-- .element: class="fragment" data-fragment-index="2" -->
 
 Lets create a custom LayerList view for a Bootstrap app
 
+[STEPS](https://github.com/jcfranco/uc-2017-customizing-widgets/blob/master/demos/steps.md)
+
 <!-- .slide: data-background="images/demo-background.png" -->
 
 ---
