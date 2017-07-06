@@ -66,7 +66,6 @@
         }
 
         function createItemNode(item, parentNode) {
-          console.log(item);
           var itemNode = $('<li class="list-group-item" />');
 
           var updatingNode = $('<span class="badge" />');
