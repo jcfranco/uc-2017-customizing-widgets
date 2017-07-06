@@ -247,6 +247,15 @@ Our widgets are separated into views and viewmodels
 
 ---
 
+# Working with Views
+
+- Example: [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) widget
+
+- [LayerList.tsx](https://github.com/Esri/arcgis-js-api/blob/4master/widgets/LayerList.tsx) (widget view)
+- [LayerList.scss](https://github.com/Esri/arcgis-js-api/blob/4master/themes/base/widgets/_LayerList.scss)
+
+---
+
 # Views: Why?
 
 - Separates concerns
@@ -256,14 +265,14 @@ Our widgets are separated into views and viewmodels
 
 # Views: Let's customize!
 
-We're going to customize a widget view using:
+Lets create a custom widget view.
 
-- `esri/widgets/Widget`
-- JavaScript (plain old vanilla js)
+- jQuery
+- Bootstrap
 
 ---
 
-# Demo: Restyle View
+# Demo: Create custom LayerList view
 
 <!-- .slide: data-background="images/demo-background.png" -->
 
