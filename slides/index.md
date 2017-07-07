@@ -243,7 +243,6 @@ Lets create a custom widget view.
 
 Using... <!-- .element: class="fragment" data-fragment-index="1" -->
 
-
 - [jQuery](https://jquery.com/) <!-- .element: class="fragment" data-fragment-index="2" -->
   - [Plugin creation](https://learn.jquery.com/plugins/basic-plugin-creation/) <!-- .element: class="fragment" data-fragment-index="2" -->
 - [Bootstrap](http://getbootstrap.com/) <!-- .element: class="fragment" data-fragment-index="2" -->
