@@ -90,10 +90,11 @@
 
 1. Create your theme directory.
   -   `esri/themes/[your-theme-name]/`
-1. Create a Sass file in your directory.
+1. Create a Sass file in your theme directory.
   - `main.scss`
   - `@import "../base/core";`
 1. Compile.
+1. Include the compiled CSS in your app.
 
 
 ```
@@ -104,11 +105,11 @@
 ---
 
 Before writing a bunch of CSS selectors, let's look at the
-# Theming Method.
+# Theme Structure.
 
 ---
 
-# Theming Method
+# Theme Structure
 
 Three main areas:
 - Color
@@ -117,36 +118,37 @@ Three main areas:
 
 ---
 
-# Theming Method
+# Theme Structure
 
 Three main files:
 - `base/_colorVariables.scss`
 - `base/_sizes.scss`
 - `base/_type.scss`
 
+These contain the **default** values.
+
 ---
 
-# Theming Method
+# Theme Structure
 
-Default:
+### Default
 ```
 // Inside base/_colorVariables.scss
 $text_color : #6e6e6e !default ;
 ```
 
-Your theme:
+Any value assignment overrides the `!default` value.
+
 ```
 // Inside esri/themes/[your-theme-name]/main.scss
 $text_color : #0079c1;
 ```
 
-Any value assignment overrides the `!default` value.
-
 But wait...there's more!
 
 ---
 
-# Theming Method
+# Theme Structure
 
 Override the four main color variables...
 
@@ -173,7 +175,12 @@ _...then magic!_   <!-- .element: class="fragment" data-fragment-index="1" -->
 
 # Level I: Theming Recap
 
-[TODO: SUMMARIZE]
+* Use Sass for easy theming.
+* Theme structure
+  - Color
+  - Size
+  - Typography
+* Use the core and override values.
 
 ---
 
