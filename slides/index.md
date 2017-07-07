@@ -239,9 +239,9 @@ Using <!-- .element: class="fragment" data-fragment-index="2" -->
 
 # Demo
 
-Lets create a custom LayerList view for a Bootstrap app
+Create a custom LayerList view for a Bootstrap app
 
-[STEPS](https://github.com/jcfranco/uc-2017-customizing-widgets/blob/master/demos/steps.md)
+[Demo Steps](https://github.com/jcfranco/uc-2017-customizing-widgets/blob/master/demos/steps.md)
 
 ![Level 2 demo](./images/level2demo.png)
 
