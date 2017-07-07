@@ -11,19 +11,29 @@
 
 # Agenda
 
-- Customization Approaches      <!-- .element: class="fragment" data-fragment-index="1" -->
-  - Authoring theme             <!-- .element: class="fragment" data-fragment-index="2" -->
-  - Recreating view             <!-- .element: class="fragment" data-fragment-index="3" -->
-  - Extending view              <!-- .element: class="fragment" data-fragment-index="4" -->
-- Q & A                         <!-- .element: class="fragment" data-fragment-index="5" -->
+- Define customizing <!-- .element: class="fragment" data-fragment-index="1" -->
+- Approaches <!-- .element: class="fragment" data-fragment-index="2" -->
+  - Demos <!-- .element: class="fragment" data-fragment-index="3" -->
+- Q & A <!-- .element: class="fragment" data-fragment-index="4" -->
+  - Maybe :) <!-- .element: class="fragment" data-fragment-index="5" -->
+
+---
+
+# Customizing Widgets
+
+- Restyling <!-- .element: class="fragment" data-fragment-index="1" -->
+  - colors, spacing, font, etc.
+- Implementing widget in a different framework <!-- .element: class="fragment" data-fragment-index="2" -->
+- Altering presentation of a widget <!-- .element: class="fragment" data-fragment-index="3" -->
+- Extending logic of a widget <!-- .element: class="fragment" data-fragment-index="4" -->
 
 ---
 
 # Customization Approaches
 
-- Authoring a theme
-- Recreating a view
-- Extending a view
+- Authoring a theme <!-- .element: class="fragment" data-fragment-index="1" -->
+- Recreating a view <!-- .element: class="fragment" data-fragment-index="2" -->
+- Extending a view <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 
@@ -229,9 +239,9 @@ Using <!-- .element: class="fragment" data-fragment-index="2" -->
 
 # Demo
 
-Lets create a custom LayerList view for a Bootstrap app
+Create a custom LayerList view for a Bootstrap app
 
-[STEPS](https://github.com/jcfranco/uc-2017-customizing-widgets/blob/master/demos/steps.md)
+[Demo Steps](https://github.com/jcfranco/uc-2017-customizing-widgets/blob/master/demos/steps.md)
 
 ![Level 2 demo](./images/level2demo.png)
 
