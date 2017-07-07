@@ -62,8 +62,8 @@
 
 ### Why Sass?
 - It's modular.                       <!-- .element: class="fragment" data-fragment-index="1" -->
-- It's DRY.                           <!-- .element: class="fragment" data-fragment-index="1" -->
-- It makes theming easy.              <!-- .element: class="fragment" data-fragment-index="1" -->
+- It's DRY.                           <!-- .element: class="fragment" data-fragment-index="2" -->
+- It makes theming easy.              <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 
@@ -78,11 +78,11 @@
 
 # Let's Create a Theme!
 
-### Your Theme
 1. Create your theme directory.
   -   `esri/themes/[your-theme-name]/`
 1. Create a Sass file in your directory.
   - `main.scss`
+  - `@import "../base/core";`
 1. Compile.
 
 
@@ -138,7 +138,7 @@ But wait...there's more!
 
 # Theming Method
 
-Override the four main **color** variables...
+Override the four main color variables...
 
 ```
 $text_color            : #d1d1d1;
