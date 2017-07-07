@@ -84,11 +84,11 @@
 ---
 
 Before writing a bunch of CSS selectors, let's look at the
-# Theming Approach.
+# Theming Method.
 
 ---
 
-# Theming Approach
+# Theming Method
 
 Three main areas:
 - Color
@@ -97,7 +97,7 @@ Three main areas:
 
 ---
 
-# Theming Approach
+# Theming Method
 
 Three main files:
 - `base/_colorVariables.scss`
@@ -106,7 +106,7 @@ Three main files:
 
 ---
 
-# Theming Approach
+# Theming Method
 
 Default:
 ```
@@ -126,7 +126,7 @@ But wait...there's more!
 
 ---
 
-# Theming Approach
+# Theming Method
 
 Override the four main **color** variables...
 
