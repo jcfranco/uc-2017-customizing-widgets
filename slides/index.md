@@ -187,7 +187,7 @@ _...then magic!_
 - View + ViewModel            <!-- .element: class="fragment" data-fragment-index="1" -->
   - Reusable                  <!-- .element: class="fragment" data-fragment-index="2" -->
   - UI replacement            <!-- .element: class="fragment" data-fragment-index="3" -->
-  - 3rd-party integration     <!-- .element: class="fragment" data-fragment-index="4" -->
+  - Framework integration     <!-- .element: class="fragment" data-fragment-index="4" -->
 
 ---
 
@@ -204,15 +204,6 @@ _...then magic!_
 
 - Separates concerns        <!-- .element: class="fragment" data-fragment-index="1" -->
 - Framework compatibility   <!-- .element: class="fragment" data-fragment-index="2" -->
-
----
-
-# Level II: Widget base class
-
-- [Widget base class](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Widget.html)
-  - `esri/widgets/Widget`
-  - Lifecycle mentioned earlier
-  - `viewModel` property
 
 ---
 
@@ -241,6 +232,8 @@ Using <!-- .element: class="fragment" data-fragment-index="2" -->
 Lets create a custom LayerList view for a Bootstrap app
 
 [STEPS](https://github.com/jcfranco/uc-2017-customizing-widgets/blob/master/demos/steps.md)
+
+![Level 2 demo](./images/level2demo.png)
 
 <!-- .slide: data-background="images/demo-background.png" -->
 
@@ -460,9 +453,7 @@ class Example {
 
 ---
 
-# Thank you!
-
-![questions](./images/thanks.gif)
+![Thank You](./images/thanks.gif)
 
 ---
 
