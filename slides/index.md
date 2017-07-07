@@ -37,7 +37,7 @@
 
 ---
 
-![questions](./images/continue.gif)
+![continue](./images/continue.gif)
 
 ---
 
@@ -399,13 +399,13 @@ class Example {
 
 # Level III: Extending a View Recap
 
-- Reusable                      <!-- .element: class="fragment" data-fragment-index="1" -->
+- Reusable                          <!-- .element: class="fragment" data-fragment-index="1" -->
   - View/ViewModel                  <!-- .element: class="fragment" data-fragment-index="2" -->
-- Same ecosystem                <!-- .element: class="fragment" data-fragment-index="3" -->
+- Same ecosystem                    <!-- .element: class="fragment" data-fragment-index="3" -->
   - No extra libraries              <!-- .element: class="fragment" data-fragment-index="4" -->
 - Extended esri/widgets/Widget      <!-- .element: class="fragment" data-fragment-index="5" -->
-  - JS API v4.4                   <!-- .element: class="fragment" data-fragment-index="6" -->
-  - TypeScript                  <!-- .element: class="fragment" data-fragment-index="7" -->
+  - Lifecycle                       <!-- .element: class="fragment" data-fragment-index="6" -->
+  - TypeScript                      <!-- .element: class="fragment" data-fragment-index="7" -->
 
 ---
 
