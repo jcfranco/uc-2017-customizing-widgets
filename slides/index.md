@@ -238,7 +238,7 @@ What have we learned? <!-- .element: class="fragment" data-fragment-index="1" --
   - Reusable                    <!-- .element: class="fragment" data-fragment-index="2" -->
   - Same ecosystem              <!-- .element: class="fragment" data-fragment-index="3" -->
 - How?                          <!-- .element: class="fragment" data-fragment-index="4" -->
-  - JS API v4.x                 <!-- .element: class="fragment" data-fragment-index="5" -->
+  - JS API v4.4                 <!-- .element: class="fragment" data-fragment-index="5" -->
   - TypeScript                  <!-- .element: class="fragment" data-fragment-index="6" -->
   - esri/widgets/Widget         <!-- .element: class="fragment" data-fragment-index="7" -->
 - Where?                        <!-- .element: class="fragment" data-fragment-index="8" -->
