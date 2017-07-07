@@ -196,7 +196,7 @@ _...then magic!_
 
 - [Widget base class](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Widget.html)
   - `esri/widgets/Widget`
-  - Lifecycle mentioned earlier
+  - Lifecycle (mentioned later)
   - `viewModel` property
 
 ---
