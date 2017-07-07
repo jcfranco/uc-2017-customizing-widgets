@@ -299,10 +299,10 @@ What have we learned? <!-- .element: class="fragment" data-fragment-index="1" --
   - Same ecosystem              <!-- .element: class="fragment" data-fragment-index="3" -->
 - How?                          <!-- .element: class="fragment" data-fragment-index="4" -->
   - JS API v4.4                 <!-- .element: class="fragment" data-fragment-index="5" -->
-  - TypeScript                  <!-- .element: class="fragment" data-fragment-index="6" -->
-  - esri/widgets/Widget         <!-- .element: class="fragment" data-fragment-index="7" -->
-- Where?                        <!-- .element: class="fragment" data-fragment-index="8" -->
-  - Right here, right now :)    <!-- .element: class="fragment" data-fragment-index="9" -->
+  - esri/widgets/Widget         <!-- .element: class="fragment" data-fragment-index="5" -->
+  - TypeScript                  <!-- .element: class="fragment" data-fragment-index="5" -->
+- Where?                        <!-- .element: class="fragment" data-fragment-index="6" -->
+  - Right here, right now :)    <!-- .element: class="fragment" data-fragment-index="7" -->
 
 ---
 
@@ -410,12 +410,12 @@ class Example {
 # Level III: Extending a View Recap
 
 - Reusable                          <!-- .element: class="fragment" data-fragment-index="1" -->
-  - View/ViewModel                  <!-- .element: class="fragment" data-fragment-index="2" -->
-- Same ecosystem                    <!-- .element: class="fragment" data-fragment-index="3" -->
-  - No extra libraries              <!-- .element: class="fragment" data-fragment-index="4" -->
-- Extended esri/widgets/Widget      <!-- .element: class="fragment" data-fragment-index="5" -->
-  - Lifecycle                       <!-- .element: class="fragment" data-fragment-index="6" -->
-  - TypeScript                      <!-- .element: class="fragment" data-fragment-index="7" -->
+  - View/ViewModel                  <!-- .element: class="fragment" data-fragment-index="1" -->
+- Same ecosystem                    <!-- .element: class="fragment" data-fragment-index="2" -->
+  - No extra libraries              <!-- .element: class="fragment" data-fragment-index="2" -->
+- Extended existing widget          <!-- .element: class="fragment" data-fragment-index="3" -->
+  - Lifecycle                       <!-- .element: class="fragment" data-fragment-index="3" -->
+  - TypeScript                      <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 
