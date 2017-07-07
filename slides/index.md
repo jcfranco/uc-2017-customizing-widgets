@@ -37,7 +37,7 @@
 
 ---
 
-![questions](./images/continue.gif)
+![continue](./images/continue.gif)
 
 ---
 
