@@ -152,34 +152,6 @@ _...then magic!_
 <!-- Presenter: JC -->
 # Esri Widgets
 
-`esri/widgets/Widget`: Our new widget framework
-
-- Accessor-based
-- Built with TypeScript
-
----
-
-# Lifecycle
-
-- `constructor`
-- `postInitialize`
-- `render`
-- `destroy`
-
----
-
-# `render()`
-
-- Entry point for UI updates
-- Driven by widget's state
-- JSX used to render our UI
-
-```js
-render() {
-  return <div>{this.title}</div>;
-}
-```
-
 ---
 
 # Widget Composition
@@ -260,43 +232,59 @@ What have we learned? <!-- .element: class="fragment" data-fragment-index="1" --
 ---
 
 <!-- Presenter: JC -->
-# Level III: ViewModels
+# Level III: Extending a View
 
-(The brain)
-
-- Core logic of widget resides here
-- Provides necessary APIs for the view to do it's thing
-- No DOM/UI concerns (think business logic)
-
----
-
-# ViewModels: Why?
-
-- Framework integration
-- Reusability
-- Separates concerns
+- Why?                          <!-- .element: class="fragment" data-fragment-index="1" -->
+  - Reusable                    <!-- .element: class="fragment" data-fragment-index="2" -->
+  - Same ecosystem              <!-- .element: class="fragment" data-fragment-index="3" -->
+- How?                          <!-- .element: class="fragment" data-fragment-index="4" -->
+  - JS API v4.x                 <!-- .element: class="fragment" data-fragment-index="5" -->
+  - TypeScript                  <!-- .element: class="fragment" data-fragment-index="6" -->
+  - esri/widgets/Widget         <!-- .element: class="fragment" data-fragment-index="7" -->
+- Where?                        <!-- .element: class="fragment" data-fragment-index="8" -->
+  - Right here, right now :)    <!-- .element: class="fragment" data-fragment-index="9" -->
 
 ---
 
-# ViewModels: Extending
+`esri/widgets/Widget`
 
-* Add or override behavior
+- Built with TypeScript         <!-- .element: class="fragment" data-fragment-index="1" -->
+- Provides lifecycle            <!-- .element: class="fragment" data-fragment-index="2" -->
+- Consistent API 4x             <!-- .element: class="fragment" data-fragment-index="3" -->
 
-```ts
-class Foo extends declared(Bar) {
+---
 
-  // custom logic
-  function yell(): void {
-    console.log("AHHHH!");
-  }
+# Lifecycle
 
-  // overrides
-  function barMethod(): string {
-    return "I'm foo now";
-  }
+- constructor         <!-- .element: class="fragment" data-fragment-index="1" -->
+- postInitialize      <!-- .element: class="fragment" data-fragment-index="2" -->
+- render              <!-- .element: class="fragment" data-fragment-index="3" -->
+- destroy             <!-- .element: class="fragment" data-fragment-index="8" -->
 
+---
+
+# `render`
+
+- Entry point for UI updates  <!-- .element: class="fragment" data-fragment-index="1" -->
+- Driven by widget's state    <!-- .element: class="fragment" data-fragment-index="2" -->
+- JSX                         <!-- .element: class="fragment" data-fragment-index="3" -->
+
+```js
+render() {
+  const x = Number(x).toFixed(3);
+  const y = Number(y).toFixed(3);
+  const scale = Number(scale).toFixed(5);
+
+  return (
+    <div bind={this} class={CSS.base} onclick={this._handleClick}>
+      <p>x: {x}</p>
+      <p>y: {y}</p>
+      <p>scale: {scale}</p>
+    </div>
+  );
 }
 ```
+<!-- .element: class="fragment current-visible" data-fragment-index="4" -->
 
 ---
 
@@ -344,7 +332,10 @@ class Example {
 # TypeScript
 
 - IDE support
-  - Visual Studio, WebStorm, Sublime, and more!  <!-- .element: class="fragment" data-fragment-index="1" -->
+  - Visual Studio   <!-- .element: class="fragment" data-fragment-index="1" -->
+  - WebStorm        <!-- .element: class="fragment" data-fragment-index="1" -->
+  - Sublime         <!-- .element: class="fragment" data-fragment-index="1" -->
+  - and more!       <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
@@ -356,9 +347,15 @@ class Example {
 
 ---
 
-# Level III: ViewModels Recap
+# Level III: Extending a View Recap
 
-[TODO: SUMMARIZE]
+- Reusable                      <!-- .element: class="fragment" data-fragment-index="1" -->
+  - View/ViewModel                  <!-- .element: class="fragment" data-fragment-index="2" -->
+- Same ecosystem                <!-- .element: class="fragment" data-fragment-index="3" -->
+  - No extra libraries              <!-- .element: class="fragment" data-fragment-index="4" -->
+- Extended esri/widgets/Widget      <!-- .element: class="fragment" data-fragment-index="5" -->
+  - JS API v4.4                   <!-- .element: class="fragment" data-fragment-index="6" -->
+  - TypeScript                  <!-- .element: class="fragment" data-fragment-index="7" -->
 
 ---
 
