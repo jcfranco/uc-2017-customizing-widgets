@@ -1,4 +1,5 @@
 <!-- .slide: data-background="images/start-background.png" -->
+<!-- Presenter: Matt -->
 
 # ArcGIS API for JavaScript: Customizing Widgets
 
