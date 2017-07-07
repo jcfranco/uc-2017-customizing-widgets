@@ -32,7 +32,9 @@
 ---
 
 <!-- Presenter: Alan -->
-# Level I: Theming
+<h1 class="eight-bit">Level I: Theming</h1>
+
+![Level 1](./images/8bit/JSAPI-8bit_Level-1.png)
 
 ---
 
@@ -160,6 +162,20 @@ _...then magic!_
 
 ---
 
+<!-- LEVEL UP A -->
+<h1 class="eight-bit">LEVEL UP!</h1>
+
+![Level 1](./images/8bit/JSAPI-8bit_Level-1.png)
+
+---
+
+<!-- LEVEL UP B -->
+<h1 class="eight-bit">LEVEL II</h1>
+
+![Level 2](./images/8bit/JSAPI-8bit_Level-2.png)
+
+---
+
 <!-- Presenter: Matt -->
 # Level II: Views
 
@@ -226,6 +242,20 @@ What have we learned? <!-- .element: class="fragment" data-fragment-index="1" --
 - Demo <!-- .element: class="fragment" data-fragment-index="6" -->
   - Where to get widget info in the API <!-- .element: class="fragment" data-fragment-index="7" -->
   - How to create a custom view in another framework <!-- .element: class="fragment" data-fragment-index="8" -->
+
+---
+
+<!-- LEVEL UP A -->
+<h1 class="eight-bit">LEVEL UP!</h1>
+
+![Level 2](./images/8bit/JSAPI-8bit_Level-2.png)
+
+---
+
+<!-- LEVEL UP B -->
+<h1 class="eight-bit">LEVEL III</h1>
+
+![Level 3](./images/8bit/JSAPI-8bit_Level-3.png)
 
 ---
 
@@ -354,6 +384,22 @@ class Example {
 - Extended esri/widgets/Widget      <!-- .element: class="fragment" data-fragment-index="5" -->
   - JS API v4.4                   <!-- .element: class="fragment" data-fragment-index="6" -->
   - TypeScript                  <!-- .element: class="fragment" data-fragment-index="7" -->
+
+---
+
+<!-- LEVEL UP A -->
+<h1 class="eight-bit">LEVEL UP!</h1>
+
+![Level 3](./images/8bit/JSAPI-8bit_Level-3.png)
+
+---
+
+<!-- LEVEL UP B -->
+<h1 class="eight-bit">LEVEL IV</h1>
+
+![Level 4](./images/8bit/JSAPI-8bit_Level-4-ani.gif)
+
+<p class="eight-bit">Put it all together.</p>
 
 ---
 
