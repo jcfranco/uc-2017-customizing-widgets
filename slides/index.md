@@ -19,15 +19,15 @@
 
 ---
 
-![questions](./images/continue.gif)
-
----
-
 # Customization Approaches
 
 - Authoring a theme
 - Recreating a view
 - Extending a view
+
+---
+
+![questions](./images/continue.gif)
 
 ---
 
@@ -39,29 +39,40 @@
 <h2 class="eight-bit">Theming</h2>
 
 ---
+
+# Level I: Theming
 ## Why Theme?
-- Branding
-- Match the map
-- Contrast with the map
-- Based on the environment
-- User-specific (e.g. bigger buttons)
+- Branding                              <!-- .element: class="fragment" data-fragment-index="1" -->
+- Match the map                         <!-- .element: class="fragment" data-fragment-index="2" -->
+- Contrast with the map                 <!-- .element: class="fragment" data-fragment-index="3" -->
+- Based on the environment              <!-- .element: class="fragment" data-fragment-index="4" -->
+- User-specific (e.g. bigger buttons)   <!-- .element: class="fragment" data-fragment-index="5" -->
 
 ---
 
-# Sass
+![Sass](./images/sass-white.png)
 
 #### A powerful scripting language for producing CSS.
 
+
+
 ---
+
+![Sass](./images/sass-white.png)
 
 ### Why Sass?
-- Modular and DRY
-- Organized code
-- Makes **theming** easy
+- It's modular.                       <!-- .element: class="fragment" data-fragment-index="1" -->
+- It's DRY.                           <!-- .element: class="fragment" data-fragment-index="1" -->
+- It makes theming easy.              <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
+![Sass](./images/sass-white.png)
+
 ### Compiling
+<img src="images/nodejs-new-pantone-black.png" height="80" style="margin-left:10px; margin-right: 10px;"/>
+<img src="images/grunt.svg" height="80" style="margin-left:10px; margin-right: 10px;"/>
+<img src="images/ruby.png" height="80" style="margin-left:10px; margin-right: 10px;"/>
 
 ---
 
@@ -72,11 +83,12 @@
   -   `esri/themes/[your-theme-name]/`
 1. Create a Sass file in your directory.
   - `main.scss`
+1. Compile.
+
 
 ```
   <!-- in your app -->
-  <link rel="stylesheet"
-        href="esri/themes/[your-theme-name]/main.css">
+  <link rel="stylesheet" href="esri/themes/[your-theme-name]/main.css">
 ```
 
 ---
