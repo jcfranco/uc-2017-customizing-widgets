@@ -445,9 +445,7 @@ class Example {
 
 ---
 
-# Thank you!
-
-![questions](./images/thanks.gif)
+![Thank You](./images/thanks.gif)
 
 ---
 
