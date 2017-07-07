@@ -200,7 +200,7 @@ _...then magic!_   <!-- .element: class="fragment" data-fragment-index="1" -->
 ---
 
 <!-- Presenter: Matt -->
-# JS API v4 Widgets
+# Level II: Widget Views
 
 - View + ViewModel            <!-- .element: class="fragment" data-fragment-index="1" -->
   - Reusable                  <!-- .element: class="fragment" data-fragment-index="2" -->
