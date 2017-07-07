@@ -192,15 +192,6 @@ _...then magic!_
 
 ---
 
-# Level II: Widget base class
-
-- [Widget base class](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Widget.html)
-  - `esri/widgets/Widget`
-  - Lifecycle (mentioned later)
-  - `viewModel` property
-
----
-
 # Level II: Working with Views
 
 Example: [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) widget
