@@ -31,6 +31,15 @@ class CustomBasemapGallery extends declared(BasemapGallery) {
   //
   //--------------------------------------------------------------------------
 
+  @accessibleHandler()
+  private _handleClick(event: Event) {
+    const item = event.currentTarget["data-item"] as BasemapGalleryItem;
+
+    if (item.state === "ready") {
+      this.activeBasemap = item.basemap;
+    }
+  }
+
   private _renderBasemapGalleryItem(item: BasemapGalleryItem): any {
     const thumbnailUrl = item.get<string>("basemap.thumbnailUrl");
     const thumbnailSource = thumbnailUrl || DEFAULT_BASEMAP_IMAGE;
@@ -60,15 +69,6 @@ class CustomBasemapGallery extends declared(BasemapGallery) {
         <div class={CSS.itemTitle}>{title}</div>
       </li>
     );
-  }
-
-  @accessibleHandler()
-  private _handleClick(event: Event) {
-    const item = event.currentTarget["data-item"] as BasemapGalleryItem;
-
-    if (item.state === "ready") {
-      this.activeBasemap = item.basemap;
-    }
   }
 
 }

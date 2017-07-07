@@ -1,4 +1,5 @@
 <!-- .slide: data-background="images/start-background.png" -->
+<!-- Presenter: Matt -->
 
 # ArcGIS API for JavaScript: Customizing Widgets
 
@@ -238,7 +239,7 @@ What have we learned? <!-- .element: class="fragment" data-fragment-index="1" --
   - Reusable                    <!-- .element: class="fragment" data-fragment-index="2" -->
   - Same ecosystem              <!-- .element: class="fragment" data-fragment-index="3" -->
 - How?                          <!-- .element: class="fragment" data-fragment-index="4" -->
-  - JS API v4.x                 <!-- .element: class="fragment" data-fragment-index="5" -->
+  - JS API v4.4                 <!-- .element: class="fragment" data-fragment-index="5" -->
   - TypeScript                  <!-- .element: class="fragment" data-fragment-index="6" -->
   - esri/widgets/Widget         <!-- .element: class="fragment" data-fragment-index="7" -->
 - Where?                        <!-- .element: class="fragment" data-fragment-index="8" -->
@@ -248,9 +249,9 @@ What have we learned? <!-- .element: class="fragment" data-fragment-index="1" --
 
 `esri/widgets/Widget`
 
-- Built with TypeScript         <!-- .element: class="fragment" data-fragment-index="1" -->
-- Provides lifecycle            <!-- .element: class="fragment" data-fragment-index="2" -->
-- Consistent API 4x             <!-- .element: class="fragment" data-fragment-index="3" -->
+- Provides lifecycle            <!-- .element: class="fragment" data-fragment-index="1" -->
+- API consistency               <!-- .element: class="fragment" data-fragment-index="2" -->
+- Built with TypeScript         <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 
@@ -265,9 +266,9 @@ What have we learned? <!-- .element: class="fragment" data-fragment-index="1" --
 
 # `render`
 
-- Entry point for UI updates  <!-- .element: class="fragment" data-fragment-index="1" -->
-- Driven by widget's state    <!-- .element: class="fragment" data-fragment-index="2" -->
-- JSX                         <!-- .element: class="fragment" data-fragment-index="3" -->
+- Defines UI                <!-- .element: class="fragment" data-fragment-index="1" -->
+- Reacts to state           <!-- .element: class="fragment" data-fragment-index="2" -->
+- Uses JSX                  <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ```js
 render() {
