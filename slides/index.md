@@ -199,7 +199,7 @@ _...then magic!_   <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
-<!-- Presenter: JC -->
+<!-- Presenter: Matt -->
 # JS API v4 Widgets
 
 - View + ViewModel            <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -209,7 +209,6 @@ _...then magic!_   <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
-<!-- Presenter: Matt -->
 # Level II: Views
 
 - Presentation of the Widget              <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -220,12 +219,16 @@ _...then magic!_   <!-- .element: class="fragment" data-fragment-index="1" -->
 
 # Views: Why?
 
+Two main reasons why we have views
+
 - Separates concerns        <!-- .element: class="fragment" data-fragment-index="1" -->
 - Framework compatibility   <!-- .element: class="fragment" data-fragment-index="2" -->
 
 ---
 
 # Level II: Working with Views
+
+API Exploration
 
 Example: [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) widget
 
@@ -236,12 +239,13 @@ Example: [LayerList](https://developers.arcgis.com/javascript/latest/api-referen
 
 # Views: Let's customize!
 
-Lets create a custom widget view. <!-- .element: class="fragment" data-fragment-index="1" -->
+Lets create a custom widget view.
 
-Using <!-- .element: class="fragment" data-fragment-index="2" -->
+Using... <!-- .element: class="fragment" data-fragment-index="1" -->
 
-- jQuery <!-- .element: class="fragment" data-fragment-index="3" -->
-- Bootstrap <!-- .element: class="fragment" data-fragment-index="3" -->
+- [jQuery]() <!-- .element: class="fragment" data-fragment-index="3" -->
+  - [Plugin creation](https://learn.jquery.com/plugins/basic-plugin-creation/)
+- [Bootstrap](http://getbootstrap.com/) <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 
@@ -261,13 +265,12 @@ Create a custom LayerList view for a Bootstrap app
 
 What have we learned? <!-- .element: class="fragment" data-fragment-index="1" -->
 
-- View <!-- .element: class="fragment" data-fragment-index="2" -->
+- Views <!-- .element: class="fragment" data-fragment-index="2" -->
   - Face of the widget <!-- .element: class="fragment" data-fragment-index="3" -->
   - Renders the viewModel brains <!-- .element: class="fragment" data-fragment-index="4" -->
-  - Separation allows easy framework integration <!-- .element: class="fragment" data-fragment-index="5" -->
-- Demo <!-- .element: class="fragment" data-fragment-index="6" -->
-  - Where to get widget info in the API <!-- .element: class="fragment" data-fragment-index="7" -->
-  - How to create a custom view in another framework <!-- .element: class="fragment" data-fragment-index="8" -->
+  - View separation allows framework integration <!-- .element: class="fragment" data-fragment-index="5" -->
+  - Where to find View info in the API <!-- .element: class="fragment" data-fragment-index="6" -->
+  - How to create a custom view in another framework <!-- .element: class="fragment" data-fragment-index="7" -->
 
 ---
 
