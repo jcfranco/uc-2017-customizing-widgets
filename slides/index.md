@@ -52,10 +52,10 @@
 
 # Level I: Theming
 ## Why Theme?
-- Branding                              <!-- .element: class="fragment" data-fragment-index="1" -->
-- Match the map                         <!-- .element: class="fragment" data-fragment-index="2" -->
-- Contrast with the map                 <!-- .element: class="fragment" data-fragment-index="3" -->
-- Based on the environment              <!-- .element: class="fragment" data-fragment-index="4" -->
+- Match branding.                              <!-- .element: class="fragment" data-fragment-index="1" -->
+- Match the map.                         <!-- .element: class="fragment" data-fragment-index="2" -->
+- Contrast with the map.                 <!-- .element: class="fragment" data-fragment-index="3" -->
+- Based on the environment.              <!-- .element: class="fragment" data-fragment-index="4" -->
 - User-specific (e.g. bigger buttons)   <!-- .element: class="fragment" data-fragment-index="5" -->
 
 ---
@@ -157,7 +157,9 @@ $anchor_color          : #9e9e8e;
 $button_text_color     : #adadad;
 ```
 
-_...then magic!_
+_...then magic!_   <!-- .element: class="fragment" data-fragment-index="1" -->
+
+<img src="./images/8bit/JSAPI-8bit_Magic.png" style="margin: 0;"/>  <!-- .element: class="fragment" data-fragment-index="1" -->
 
 [Theming Guide](https://developers.arcgis.com/javascript/latest/guide/styling/index.html)
 
