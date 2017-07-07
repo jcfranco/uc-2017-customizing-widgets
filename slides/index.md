@@ -15,7 +15,6 @@
 - Approaches <!-- .element: class="fragment" data-fragment-index="2" -->
   - Demos <!-- .element: class="fragment" data-fragment-index="3" -->
 - Q & A <!-- .element: class="fragment" data-fragment-index="4" -->
-  - Maybe :) <!-- .element: class="fragment" data-fragment-index="5" -->
 
 ---
 
