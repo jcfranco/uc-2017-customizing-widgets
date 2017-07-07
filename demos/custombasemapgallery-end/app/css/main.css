@@ -1,0 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+@import url(CustomBasemapGallery.css);
+
+.esri-widget {
+  font-family: 'Press Start 2P', cursive;
+}
