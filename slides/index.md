@@ -10,12 +10,11 @@
 
 # Agenda
 
-- About Customizing Widgets
-- Approaches
-- Theming
-- Views
-- ViewModels
-- Q & A
+- Customization Approaches      <!-- .element: class="fragment" data-fragment-index="1" -->
+  - Authoring theme             <!-- .element: class="fragment" data-fragment-index="2" -->
+  - Recreating view             <!-- .element: class="fragment" data-fragment-index="3" -->
+  - Extending view              <!-- .element: class="fragment" data-fragment-index="4" -->
+- Q & A                         <!-- .element: class="fragment" data-fragment-index="5" -->
 
 ---
 
@@ -23,21 +22,16 @@
 
 ---
 
-# About Customizing Widgets
+# Customization Approaches
 
- What do we mean by customizing?
-
-- Theming widgets
-- Recreating a view with or without our widget framework
-- Extending an existing widgets view or viewModel
+- Authoring a theme
+- Recreating a view
+- Extending a view
 
 ---
 
-# Approaches
-
----
-
-# Theming
+<!-- Presenter: Alan -->
+# Level I: Theming
 
 ---
 
@@ -149,193 +143,231 @@ _...then magic!_
 
 ---
 
+# Level I: Theming Recap
 
+[TODO: SUMMARIZE]
+
+---
+
+<!-- Presenter: JC -->
 # Esri Widgets
 
-`esri/widgets/Widget`: Our new widget framework
+---
 
-- Accessor-based
-- Built with TypeScript
+# Widget Composition
+
+Our widgets are composed of views and viewmodels.
+
+Lets talk about them!
 
 ---
 
-# Lifecycle
+<!-- Presenter: Matt -->
+# Level II: Views
 
-- `constructor`
-- `postInitialize`
-- `render`
-- `destroy`
-
----
-
-# `render()`
-
-- Entry point for UI updates
-- Driven by widget's state
-- JSX used to render our UI
-
-```js
-render() {
-  return <div>{this.title}</div>;
-}
-```
-
----
-
-# TypeScript
-
-- Superset of JavaScript
-- Compiled to JavaScript
-- Statically type-checked
-- Syntactic sugar... sweet!
-  - Use ES6 syntax while targeting ES5 environments
-- Decorators
-
----
-
-# TS = type safety
-
-```ts
-let view: MapView | SceneView;
-
-// ...
-
-/*
- * TS2322: Type '"not-a-view"' is not assignable
- * to type 'MapView | SceneView'.
- */
-view = "not-a-view";
-```
-
----
-
-# Typings!
-
-Help describe what things are:
-
-```ts
-type PresenterNames = "Alan" | "Matt" | "JC";
-
-interface Person {
-  name: string;
-  age: number;
-}
-
-interface Presenter extends Person {
-  name: PresenterNames;
-}
-```
-
----
-
-# Decorators!
-
-- Enhance classes, properties, methods, parameters
-
-```ts
-class Foo extends declared(Accessor) {
-
-  // read-only
-  @property({ readOnly: true })
-  foo = new Foo();
-
-  // aliased
-  @property({ aliasOf: "foo" })
-  bar;
-
-  // autocast
-  @property({ type: SomeClass })
-  baz;
-}
-```
-
----
-
-# Views
-
-(The face)
-
-- `esri/widgets/Widget`
-- Uses ViewModel APIs to render the UI
-- View-specific logic resides here
+- Presentation of the Widget              <!-- .element: class="fragment" data-fragment-index="1" -->
+- Uses ViewModel APIs to render the UI    <!-- .element: class="fragment" data-fragment-index="2" -->
+- View-specific logic resides here        <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 
 # Views: Why?
 
-- Separates concerns
-- Framework compatibility
+- Separates concerns        <!-- .element: class="fragment" data-fragment-index="1" -->
+- Framework compatibility   <!-- .element: class="fragment" data-fragment-index="2" -->
+
+---
+
+# Level II: Widget base class
+
+- [Widget base class](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-Widget.html)
+  - `esri/widgets/Widget`
+  - Lifecycle mentioned earlier
+  - `viewModel` property
+
+---
+
+# Level II: Working with Views
+
+Example: [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) widget
+
+- [LayerList.tsx](https://github.com/Esri/arcgis-js-api/blob/4master/widgets/LayerList.tsx) (View)
+- [LayerList.scss](https://github.com/Esri/arcgis-js-api/blob/4master/themes/base/widgets/_LayerList.scss) (Theme)
 
 ---
 
 # Views: Let's customize!
 
-We're going to customize a widget view using:
+Lets create a custom widget view. <!-- .element: class="fragment" data-fragment-index="1" -->
 
-- `esri/widgets/Widget`
-- JavaScript (plain old vanilla js)
+Using <!-- .element: class="fragment" data-fragment-index="2" -->
+
+- jQuery <!-- .element: class="fragment" data-fragment-index="3" -->
+- Bootstrap <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 
-# Demo: Restyle View
+# Demo
+
+Lets create a custom LayerList view for a Bootstrap app
+
+[STEPS](https://github.com/jcfranco/uc-2017-customizing-widgets/blob/master/demos/steps.md)
 
 <!-- .slide: data-background="images/demo-background.png" -->
 
 ---
 
-# ViewModels & Views
+# Level II: Views Recap
 
-Our widgets are separated into views and viewmodels
+What have we learned? <!-- .element: class="fragment" data-fragment-index="1" -->
 
----
-
-# ViewModels
-
-(The brain)
-
-- Core logic of widget resides here
-- Provides necessary APIs for the view to do it's thing
-- No DOM/UI concerns (think business logic)
+- View <!-- .element: class="fragment" data-fragment-index="2" -->
+  - Face of the widget <!-- .element: class="fragment" data-fragment-index="3" -->
+  - Renders the viewModel brains <!-- .element: class="fragment" data-fragment-index="4" -->
+  - Separation allows easy framework integration <!-- .element: class="fragment" data-fragment-index="5" -->
+- Demo <!-- .element: class="fragment" data-fragment-index="6" -->
+  - Where to get widget info in the API <!-- .element: class="fragment" data-fragment-index="7" -->
+  - How to create a custom view in another framework <!-- .element: class="fragment" data-fragment-index="8" -->
 
 ---
 
-# ViewModels: Why?
+<!-- Presenter: JC -->
+# Level III: Extending a View
 
-- Framework integration
-- Reusability
-- Separates concerns
+- Why?                          <!-- .element: class="fragment" data-fragment-index="1" -->
+  - Reusable                    <!-- .element: class="fragment" data-fragment-index="2" -->
+  - Same ecosystem              <!-- .element: class="fragment" data-fragment-index="3" -->
+- How?                          <!-- .element: class="fragment" data-fragment-index="4" -->
+  - JS API v4.x                 <!-- .element: class="fragment" data-fragment-index="5" -->
+  - TypeScript                  <!-- .element: class="fragment" data-fragment-index="6" -->
+  - esri/widgets/Widget         <!-- .element: class="fragment" data-fragment-index="7" -->
+- Where?                        <!-- .element: class="fragment" data-fragment-index="8" -->
+  - Right here, right now :)    <!-- .element: class="fragment" data-fragment-index="9" -->
 
 ---
 
-# ViewModels: Extending
+`esri/widgets/Widget`
 
-* Add or override behavior
+- Built with TypeScript         <!-- .element: class="fragment" data-fragment-index="1" -->
+- Provides lifecycle            <!-- .element: class="fragment" data-fragment-index="2" -->
+- Consistent API 4x             <!-- .element: class="fragment" data-fragment-index="3" -->
 
-```ts
-class Foo extends declared(Bar) {
+---
 
-  // custom logic
-  function yell(): void {
-    console.log("AHHHH!");
-  }
+# Lifecycle
 
-  // overrides
-  function barMethod(): string {
-    return "I'm foo now";
-  }
+- constructor         <!-- .element: class="fragment" data-fragment-index="1" -->
+- postInitialize      <!-- .element: class="fragment" data-fragment-index="2" -->
+- render              <!-- .element: class="fragment" data-fragment-index="3" -->
+- destroy             <!-- .element: class="fragment" data-fragment-index="8" -->
 
+---
+
+# `render`
+
+- Entry point for UI updates  <!-- .element: class="fragment" data-fragment-index="1" -->
+- Driven by widget's state    <!-- .element: class="fragment" data-fragment-index="2" -->
+- JSX                         <!-- .element: class="fragment" data-fragment-index="3" -->
+
+```js
+render() {
+  const x = Number(x).toFixed(3);
+  const y = Number(y).toFixed(3);
+  const scale = Number(scale).toFixed(5);
+
+  return (
+    <div bind={this} class={CSS.base} onclick={this._handleClick}>
+      <p>x: {x}</p>
+      <p>y: {y}</p>
+      <p>scale: {scale}</p>
+    </div>
+  );
 }
 ```
+<!-- .element: class="fragment current-visible" data-fragment-index="4" -->
 
 ---
 
-# Demo: Custom View
+# TypeScript
+
+- Typed JavaScript <!-- .element: class="fragment" data-fragment-index="1" -->
+
+```ts
+let view: MapView | SceneView;
+
+// later...
+
+// TS2322: Type '"not-a-view"' is not assignable
+// to type 'MapView | SceneView'.
+view = "not-a-view";
+```
+<!-- .element: class="fragment" data-fragment-index="2" -->
+
+---
+
+# TypeScript
+
+- JS of the future, now
+
+```ts
+// const
+const numbers = [1, 2, 3];
+
+// fat arrow functions
+letters.forEach(letter => console.log(letter));
+
+// template literals
+const myString = `last number: ${ numbers[ numbers.length - 1 ] }`;
+
+// decorators
+class Example {
+  @log
+  stringify(item: object): string { /* ... */ }
+}
+```
+<!-- .element: class="fragment" data-fragment-index="1" -->
+
+---
+
+# TypeScript
+
+- IDE support
+  - Visual Studio   <!-- .element: class="fragment" data-fragment-index="1" -->
+  - WebStorm        <!-- .element: class="fragment" data-fragment-index="1" -->
+  - Sublime         <!-- .element: class="fragment" data-fragment-index="1" -->
+  - and more!       <!-- .element: class="fragment" data-fragment-index="1" -->
+
+---
+
+# Demo: Extending a View
+
+<img src="images/demo-extending-view.png" width="50%"/>
 
 <!-- .slide: data-background="images/demo-background.png" -->
 
 ---
 
-## Suggested Sessions
+# Level III: Extending a View Recap
+
+- Reusable                      <!-- .element: class="fragment" data-fragment-index="1" -->
+  - View/ViewModel                  <!-- .element: class="fragment" data-fragment-index="2" -->
+- Same ecosystem                <!-- .element: class="fragment" data-fragment-index="3" -->
+  - No extra libraries              <!-- .element: class="fragment" data-fragment-index="4" -->
+- Extended esri/widgets/Widget      <!-- .element: class="fragment" data-fragment-index="5" -->
+  - JS API v4.4                   <!-- .element: class="fragment" data-fragment-index="6" -->
+  - TypeScript                  <!-- .element: class="fragment" data-fragment-index="7" -->
+
+---
+
+# Conclusion
+
+- Authored a theme      <!-- .element: class="fragment" data-fragment-index="1" -->
+- Recreated a view      <!-- .element: class="fragment" data-fragment-index="2" -->
+- Extended a view       <!-- .element: class="fragment" data-fragment-index="3" -->
+
+---
+
+## Suggested Session
 
 - [Developing Your Own Widget with the ArcGIS API for JavaScript
 ](https://userconference2017.schedule.esri.com/schedule/603662896)
