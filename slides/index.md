@@ -32,13 +32,14 @@
 ---
 
 <!-- Presenter: Alan -->
-<h1 class="eight-bit">Level I: Theming</h1>
+<h1 class="eight-bit">Level I</h1>
 
 ![Level 1](./images/8bit/JSAPI-8bit_Level-1.png)
 
----
+<h2 class="eight-bit">Theming</h2>
 
-# Why Theme?
+---
+## Why Theme?
 - Branding
 - Match the map
 - Contrast with the map
@@ -174,6 +175,8 @@ _...then magic!_
 
 ![Level 2](./images/8bit/JSAPI-8bit_Level-2.png)
 
+<h2 class="eight-bit">Views</h2>
+
 ---
 
 <!-- Presenter: Matt -->
@@ -256,6 +259,8 @@ What have we learned? <!-- .element: class="fragment" data-fragment-index="1" --
 <h1 class="eight-bit">LEVEL III</h1>
 
 ![Level 3](./images/8bit/JSAPI-8bit_Level-3.png)
+
+<h2 class="eight-bit">Extending a View</h2>
 
 ---
 
