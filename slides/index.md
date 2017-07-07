@@ -243,9 +243,10 @@ Lets create a custom widget view.
 
 Using... <!-- .element: class="fragment" data-fragment-index="1" -->
 
-- [jQuery]() <!-- .element: class="fragment" data-fragment-index="3" -->
-  - [Plugin creation](https://learn.jquery.com/plugins/basic-plugin-creation/)
-- [Bootstrap](http://getbootstrap.com/) <!-- .element: class="fragment" data-fragment-index="3" -->
+
+- [jQuery](https://jquery.com/) <!-- .element: class="fragment" data-fragment-index="2" -->
+  - [Plugin creation](https://learn.jquery.com/plugins/basic-plugin-creation/) <!-- .element: class="fragment" data-fragment-index="2" -->
+- [Bootstrap](http://getbootstrap.com/) <!-- .element: class="fragment" data-fragment-index="2" -->
 
 ---
 
@@ -254,6 +255,7 @@ Using... <!-- .element: class="fragment" data-fragment-index="1" -->
 Create a custom LayerList view for a Bootstrap app
 
 [Demo Steps](https://github.com/jcfranco/uc-2017-customizing-widgets/blob/master/demos/steps.md)
+[Demo](https://jcfranco.github.io/uc-2017-customizing-widgets/demos/customlayerlist-start/)
 
 ![Level 2 demo](./images/level2demo.png)
 
