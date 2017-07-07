@@ -153,16 +153,6 @@ _...then magic!_
 
 ---
 
-<!-- Presenter: JC -->
-# JS API v4 Widgets
-
-- View + ViewModel            <!-- .element: class="fragment" data-fragment-index="1" -->
-  - Reusable                  <!-- .element: class="fragment" data-fragment-index="2" -->
-  - UI replacement            <!-- .element: class="fragment" data-fragment-index="3" -->
-  - 3rd-party integration     <!-- .element: class="fragment" data-fragment-index="4" -->
-
----
-
 <!-- LEVEL UP A -->
 <h1 class="eight-bit">LEVEL UP!</h1>
 
@@ -176,6 +166,16 @@ _...then magic!_
 ![Level 2](./images/8bit/JSAPI-8bit_Level-2.png)
 
 <h2 class="eight-bit">Views</h2>
+
+---
+
+<!-- Presenter: JC -->
+# JS API v4 Widgets
+
+- View + ViewModel            <!-- .element: class="fragment" data-fragment-index="1" -->
+  - Reusable                  <!-- .element: class="fragment" data-fragment-index="2" -->
+  - UI replacement            <!-- .element: class="fragment" data-fragment-index="3" -->
+  - 3rd-party integration     <!-- .element: class="fragment" data-fragment-index="4" -->
 
 ---
 
