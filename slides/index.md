@@ -248,9 +248,9 @@ What have we learned? <!-- .element: class="fragment" data-fragment-index="1" --
 
 `esri/widgets/Widget`
 
-- Built with TypeScript         <!-- .element: class="fragment" data-fragment-index="1" -->
-- Provides lifecycle            <!-- .element: class="fragment" data-fragment-index="2" -->
-- Consistent API 4x             <!-- .element: class="fragment" data-fragment-index="3" -->
+- Provides lifecycle            <!-- .element: class="fragment" data-fragment-index="1" -->
+- API consistency               <!-- .element: class="fragment" data-fragment-index="2" -->
+- Built with TypeScript         <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 
@@ -265,9 +265,9 @@ What have we learned? <!-- .element: class="fragment" data-fragment-index="1" --
 
 # `render`
 
-- Entry point for UI updates  <!-- .element: class="fragment" data-fragment-index="1" -->
-- Driven by widget's state    <!-- .element: class="fragment" data-fragment-index="2" -->
-- JSX                         <!-- .element: class="fragment" data-fragment-index="3" -->
+- Defines UI                <!-- .element: class="fragment" data-fragment-index="1" -->
+- Reacts to state           <!-- .element: class="fragment" data-fragment-index="2" -->
+- Uses JSX                  <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ```js
 render() {
