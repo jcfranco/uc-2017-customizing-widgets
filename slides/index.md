@@ -151,15 +151,12 @@ _...then magic!_
 ---
 
 <!-- Presenter: JC -->
-# Esri Widgets
+# JS API v4 Widgets
 
----
-
-# Widget Composition
-
-Our widgets are composed of views and viewmodels.
-
-Lets talk about them!
+- View + ViewModel            <!-- .element: class="fragment" data-fragment-index="1" -->
+  - Reusable                  <!-- .element: class="fragment" data-fragment-index="2" -->
+  - UI replacement            <!-- .element: class="fragment" data-fragment-index="3" -->
+  - 3rd-party integration     <!-- .element: class="fragment" data-fragment-index="4" -->
 
 ---
 
