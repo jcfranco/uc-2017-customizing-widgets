@@ -115,50 +115,62 @@ function createItemNode(item, parentNode) {
   var textNode = $('<span />');
   itemNode.append(textNode);
 
+  // sublayers node
   var childGroupNode = $('<ul class="list-group hidden" />');
   childGroupNode.css("margin-top", "15px");
   itemNode.append(childGroupNode);
 
-  setText(item.title, textNode);
-  item.watch("title", function () {
-    setText(item.title, textNode);
-  });
-
-  setVisible(item, toggleIconNode);
-  item.watch("visible", function () {
-    setVisible(item, toggleIconNode);
-  });
-
-  setUpdatingClass(item, updatingNode);
-  item.watch("updating", function () {
-    setUpdatingClass(item, updatingNode);
-  });
-
-  setMutedClass(item, textNode);
-  item.watch("visibleAtCurrentScale", function () {
-    setMutedClass(item, textNode);
-  });
-
+  // recursively add children to sublayers node
   addChildren(childGroupNode, expandNode, buttonGroupNode, item.children);
   item.children.on("change", function () {
     addChildren(childGroupNode, expandNode, buttonGroupNode, item.children);
-  });
-
-  expandNode.on("click", function (event) {
-    expandIconNode.toggleClass("glyphicon-triangle-right glyphicon-triangle-bottom");
-    childGroupNode.toggleClass("hidden");
-  });
-
-  toggleNode.on("click", function (event) {
-    item.visible = !item.visible;
-    event.stopPropagation();
   });
 
   parentNode.append(itemNode);
 }
 ```
 
-14. Add node functions
+14. Check to see if nodes are there now.
+
+15. Setup onclick listeners
+
+```
+expandNode.on("click", function (event) {
+  expandIconNode.toggleClass("glyphicon-triangle-right glyphicon-triangle-bottom");
+  childGroupNode.toggleClass("hidden");
+});
+
+toggleNode.on("click", function (event) {
+  item.visible = !item.visible;
+  event.stopPropagation();
+});
+```
+
+16. Add watchers for item properties
+
+```
+setText(item.title, textNode);
+item.watch("title", function () {
+  setText(item.title, textNode);
+});
+
+setVisible(item, toggleIconNode);
+item.watch("visible", function () {
+  setVisible(item, toggleIconNode);
+});
+
+setUpdatingClass(item, updatingNode);
+item.watch("updating", function () {
+  setUpdatingClass(item, updatingNode);
+});
+
+setMutedClass(item, textNode);
+item.watch("visibleAtCurrentScale", function () {
+  setMutedClass(item, textNode);
+});
+```
+
+17. Add node functions
 
 ```
 function setUpdatingClass(item, updatingNode) {
@@ -214,9 +226,9 @@ function addChildren(childGroupNode, expandNode, buttonGroupNode, children) {
 }
 ```
 
-15. Custom bootstrap layerlist should be working!
+18. Custom bootstrap layerlist should be working!
 
-16. Optional: Add custom bootstrap theme
+19. Optional: Add custom bootstrap theme
 
 ```
 <!-- Optional theme -->

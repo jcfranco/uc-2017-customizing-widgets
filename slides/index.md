@@ -11,20 +11,18 @@
 
 # Agenda
 
-- Define customizing <!-- .element: class="fragment" data-fragment-index="1" -->
-- Approaches <!-- .element: class="fragment" data-fragment-index="2" -->
-  - Demos <!-- .element: class="fragment" data-fragment-index="3" -->
+- What can be customized <!-- .element: class="fragment" data-fragment-index="1" -->
+- Customization approaches with demos
 - Q & A <!-- .element: class="fragment" data-fragment-index="4" -->
 
 ---
 
 # Customizing Widgets
 
-- Restyling <!-- .element: class="fragment" data-fragment-index="1" -->
-  - colors, spacing, font, etc.
+- Theming <!-- .element: class="fragment" data-fragment-index="1" -->
+  - Changing styles: colors, sizing, font, etc.
 - Implementing widget in a different framework <!-- .element: class="fragment" data-fragment-index="2" -->
 - Altering presentation of a widget <!-- .element: class="fragment" data-fragment-index="3" -->
-- Extending logic of a widget <!-- .element: class="fragment" data-fragment-index="4" -->
 
 ---
 
@@ -62,8 +60,6 @@
 ![Sass](./images/sass-white.png)
 
 #### A powerful scripting language for producing CSS.
-
-
 
 ---
 
@@ -200,12 +196,13 @@ _...then magic!_   <!-- .element: class="fragment" data-fragment-index="1" -->
 ---
 
 <!-- Presenter: Matt -->
-# Level II: Widget Views
+# Level II: Widget Composition
 
-- View + ViewModel            <!-- .element: class="fragment" data-fragment-index="1" -->
-  - Reusable                  <!-- .element: class="fragment" data-fragment-index="2" -->
-  - UI replacement            <!-- .element: class="fragment" data-fragment-index="3" -->
-  - Framework integration     <!-- .element: class="fragment" data-fragment-index="4" -->
+Widgets are composed of Views & ViewModels
+
+  - Reusable                  <!-- .element: class="fragment" data-fragment-index="1" -->
+  - UI replacement            <!-- .element: class="fragment" data-fragment-index="2" -->
+  - Framework integration     <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 
@@ -214,15 +211,6 @@ _...then magic!_   <!-- .element: class="fragment" data-fragment-index="1" -->
 - Presentation of the Widget              <!-- .element: class="fragment" data-fragment-index="1" -->
 - Uses ViewModel APIs to render the UI    <!-- .element: class="fragment" data-fragment-index="2" -->
 - View-specific logic resides here        <!-- .element: class="fragment" data-fragment-index="3" -->
-
----
-
-# Views: Why?
-
-Two main reasons why we have views
-
-- Separates concerns        <!-- .element: class="fragment" data-fragment-index="1" -->
-- Framework compatibility   <!-- .element: class="fragment" data-fragment-index="2" -->
 
 ---
 
@@ -253,7 +241,7 @@ Using... <!-- .element: class="fragment" data-fragment-index="1" -->
 
 Create a custom LayerList view for a Bootstrap app
 
-[Demo Steps](https://github.com/jcfranco/uc-2017-customizing-widgets/blob/master/demos/steps.md)
+[Demo Steps](https://github.com/jcfranco/uc-2017-customizing-widgets/blob/master/demos/layerlist-steps.md)
 [Demo](https://jcfranco.github.io/uc-2017-customizing-widgets/demos/customlayerlist-start/)
 
 ![Level 2 demo](./images/level2demo.png)
@@ -270,8 +258,8 @@ What have we learned? <!-- .element: class="fragment" data-fragment-index="1" --
   - Face of the widget <!-- .element: class="fragment" data-fragment-index="3" -->
   - Renders the viewModel brains <!-- .element: class="fragment" data-fragment-index="4" -->
   - View separation allows framework integration <!-- .element: class="fragment" data-fragment-index="5" -->
-  - Where to find View info in the API <!-- .element: class="fragment" data-fragment-index="6" -->
-  - How to create a custom view in another framework <!-- .element: class="fragment" data-fragment-index="7" -->
+  - Views can be downloaded on API docs <!-- .element: class="fragment" data-fragment-index="6" -->
+  - Can create views in other frameworks using ViewModels <!-- .element: class="fragment" data-fragment-index="7" -->
 
 ---
 
