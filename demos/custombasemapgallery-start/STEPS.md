@@ -89,7 +89,7 @@
       // new custom class
       thumbnailFrame: "esri-basemap-gallery__item-thumbnail-frame",
     };
-    ```
+  ```
 
     **Note**: we added a custom CSS class to the lookup object used to apply CSS.
 
