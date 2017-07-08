@@ -27,7 +27,7 @@
 
         function setVisible(item, toggleIconNode) {
           var openGlyph = "glyphicon-eye-open";
-          var closeGlyph = "glyphicon-eye-close";
+          var closeGlyph = "glyphicon-eye-close text-muted";
 
           if (item.visible) {
             toggleIconNode.addClass(openGlyph).removeClass(closeGlyph);
