@@ -354,6 +354,9 @@ render() {
 
 # Demo: Extending a View
 
+[Demo](https://jcfranco.github.io/uc-2017-customizing-widgets/demos/custombasemapgallery-end/)
+[Steps](https://jcfranco.github.io/uc-2017-customizing-widgets/demos/custombasemapgallery-end/)
+
 <img src="images/demo-extending-view.png" width="50%"/>
 
 <!-- .slide: data-background="images/demo-background.png" -->
