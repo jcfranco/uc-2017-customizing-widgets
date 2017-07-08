@@ -22,7 +22,7 @@
         }
 
         function setText(title, textNode) {
-          textNode.text(title);
+          textNode.text(title || "Untitled Layer");
         }
 
         function setVisible(item, toggleIconNode) {

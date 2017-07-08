@@ -149,10 +149,9 @@ toggleNode.on("click", function (event) {
 16. Add watchers for item properties
 
 ```
-setText(item.title, textNode);
-item.watch("title", function () {
-  setText(item.title, textNode);
-});
+function setText(title, textNode) {
+  textNode.text(title || "Untitled Layer");
+}
 
 setVisible(item, toggleIconNode);
 item.watch("visible", function () {

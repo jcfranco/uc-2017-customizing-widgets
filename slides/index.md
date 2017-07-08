@@ -11,9 +11,9 @@
 
 # Agenda
 
-- What can be customized <!-- .element: class="fragment" data-fragment-index="1" -->
+- What can be customized
 - Customization approaches with demos
-- Q & A <!-- .element: class="fragment" data-fragment-index="4" -->
+- Q & A
 
 ---
 
@@ -28,11 +28,13 @@
 
 # Customization Approaches
 
-- Authoring a theme <!-- .element: class="fragment" data-fragment-index="1" -->
-- Recreating a view <!-- .element: class="fragment" data-fragment-index="2" -->
-- Extending a view <!-- .element: class="fragment" data-fragment-index="3" -->
+- Authoring a theme
+- Recreating a view
+- Extending a view
 
 ---
+
+# Ready?
 
 ![continue](./images/continue.gif)
 
@@ -60,6 +62,7 @@
 ![Sass](./images/sass-white.png)
 
 #### A powerful scripting language for producing CSS.
+
 
 ---
 
@@ -222,6 +225,7 @@ Example: [LayerList](https://developers.arcgis.com/javascript/latest/api-referen
 
 - [LayerList.tsx](https://github.com/Esri/arcgis-js-api/blob/4master/widgets/LayerList.tsx) (View)
 - [LayerList.scss](https://github.com/Esri/arcgis-js-api/blob/4master/themes/base/widgets/_LayerList.scss) (Theme)
+- [LayerList Sample](https://developers.arcgis.com/javascript/latest/sample-code/widgets-layerlist/index.html)
 
 ---
 
@@ -229,11 +233,11 @@ Example: [LayerList](https://developers.arcgis.com/javascript/latest/api-referen
 
 Lets create a custom widget view.
 
-Using... <!-- .element: class="fragment" data-fragment-index="1" -->
+Using...
 
-- [jQuery](https://jquery.com/) <!-- .element: class="fragment" data-fragment-index="2" -->
-  - [Plugin creation](https://learn.jquery.com/plugins/basic-plugin-creation/) <!-- .element: class="fragment" data-fragment-index="2" -->
-- [Bootstrap](http://getbootstrap.com/) <!-- .element: class="fragment" data-fragment-index="2" -->
+- [jQuery](https://jquery.com/)
+  - [Plugin creation](https://learn.jquery.com/plugins/basic-plugin-creation/)
+- [Bootstrap](http://getbootstrap.com/)
 
 ---
 
@@ -241,10 +245,10 @@ Using... <!-- .element: class="fragment" data-fragment-index="1" -->
 
 Create a custom LayerList view for a Bootstrap app
 
-[Demo Steps](https://github.com/jcfranco/uc-2017-customizing-widgets/blob/master/demos/layerlist-steps.md)
-[Demo](https://jcfranco.github.io/uc-2017-customizing-widgets/demos/customlayerlist-start/)
+- [Demo Steps](https://github.com/jcfranco/uc-2017-customizing-widgets/blob/master/demos/layerlist-steps.md)
+- [Demo](https://jcfranco.github.io/uc-2017-customizing-widgets/demos/customlayerlist-start/)
 
-![Level 2 demo](./images/level2demo.png)
+[![Level 2 demo](./images/level2demo.png)](https://jcfranco.github.io/uc-2017-customizing-widgets/demos/customlayerlist-complete/)
 
 <!-- .slide: data-background="images/demo-background.png" -->
 
@@ -252,14 +256,14 @@ Create a custom LayerList view for a Bootstrap app
 
 # Level II: Views Recap
 
-What have we learned? <!-- .element: class="fragment" data-fragment-index="1" -->
+What have we learned about Widget Views?
 
-- Views <!-- .element: class="fragment" data-fragment-index="2" -->
-  - Face of the widget <!-- .element: class="fragment" data-fragment-index="3" -->
-  - Renders the viewModel brains <!-- .element: class="fragment" data-fragment-index="4" -->
-  - View separation allows framework integration <!-- .element: class="fragment" data-fragment-index="5" -->
-  - Views can be downloaded on API docs <!-- .element: class="fragment" data-fragment-index="6" -->
-  - Can create views in other frameworks using ViewModels <!-- .element: class="fragment" data-fragment-index="7" -->
+- Views <!-- .element: class="fragment" data-fragment-index="1" -->
+  - Face of the widget <!-- .element: class="fragment" data-fragment-index="2" -->
+  - Renders the viewModel brains <!-- .element: class="fragment" data-fragment-index="3" -->
+  - View separation allows framework integration <!-- .element: class="fragment" data-fragment-index="4" -->
+  - Views can be downloaded on API docs <!-- .element: class="fragment" data-fragment-index="5" -->
+  - Can create views in other frameworks using ViewModels <!-- .element: class="fragment" data-fragment-index="6" -->
 
 ---
 
