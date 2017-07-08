@@ -293,8 +293,6 @@ What have we learned about Widget Views?
   - JS API v4.4                 <!-- .element: class="fragment" data-fragment-index="5" -->
   - esri/widgets/Widget         <!-- .element: class="fragment" data-fragment-index="5" -->
   - TypeScript                  <!-- .element: class="fragment" data-fragment-index="5" -->
-- Where?                        <!-- .element: class="fragment" data-fragment-index="6" -->
-  - Right here, right now :)    <!-- .element: class="fragment" data-fragment-index="7" -->
 
 ---
 
@@ -302,7 +300,6 @@ What have we learned about Widget Views?
 
 - Provides lifecycle            <!-- .element: class="fragment" data-fragment-index="1" -->
 - API consistency               <!-- .element: class="fragment" data-fragment-index="2" -->
-- Built with TypeScript         <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 
