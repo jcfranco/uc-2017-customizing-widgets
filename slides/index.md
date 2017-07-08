@@ -355,7 +355,7 @@ render() {
 # Demo: Extending a View
 
 [Demo](https://jcfranco.github.io/uc-2017-customizing-widgets/demos/custombasemapgallery-end/)
-[Steps](https://jcfranco.github.io/uc-2017-customizing-widgets/demos/custombasemapgallery-end/)
+[Steps](https://github.com/jcfranco/uc-2017-customizing-widgets/blob/master/demos/custombasemapgallery-start/STEPS.md)
 
 <img src="images/demo-extending-view.png" width="50%"/>
 
