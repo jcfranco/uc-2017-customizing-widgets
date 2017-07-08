@@ -1,42 +1,78 @@
 # Extending View Demo: Steps
 
-1. Start with base application setup
-  1. HTML structure
-  2. TS setup
+**Note** dev environment already set up for this demo (e.g., TypeScript)
 
-2. Open SDK page
+1. Open `index.html`
+  - simple app setup
+  - imports custom widget
 
-3. Base widget extension
+2. Open `CustomBasemapGallery.tsx`
+  - widget extension boilerplate
+
+3. Go to [BasemapGallery SDK](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapGallery.html) and navigate to view file (TSX).
+  - all widget views are available on GitHub
+  - inside look at how we develop widgets
+
+4. Let's focus on `render()`. For our demo, we want to modify the markup for individual basemap items, which is produced by `_renderBasemapGalleryItem()`.
+
+5. Let's copy `_renderBasemapGalleryItem` over.
 
   ```tsx
-  /// <amd-dependency path="esri/core/tsSupport/declareExtendsHelper" name="__extends" />
-  /// <amd-dependency path="esri/core/tsSupport/decorateHelper" name="__decorate" />
+    private _renderBasemapGalleryItem(item: BasemapGalleryItem): any {
+      const thumbnailUrl = item.get<string>("basemap.thumbnailUrl");
+      const thumbnailSource = thumbnailUrl || DEFAULT_BASEMAP_IMAGE;
+      const title = item.get<string>("basemap.title");
+      const tooltip = item.get<string>("error.message") || title;
+      const tabIndex = item.state === "ready" ? 0 : -1;
+      const isSelected = this.viewModel.basemapEquals(item.basemap, this.activeBasemap);
 
-  import { subclass, declared } from "esri/core/accessorSupport/decorators";
+      const itemClasses = {
+        [CSS.selectedItem]: isSelected,
+        [CSS.itemLoading]: item.state === "loading",
+        [CSS.itemError]: item.state === "error"
+      };
 
-  import BasemapGallery = require("esri/widgets/BasemapGallery");
+      const loadingIndicator = item.state === "loading" ?
+        <div class={CSS.loadingIndicator} key="esri-basemap-gallery_loading-indicator" /> :
+        null;
 
-  @subclass("demo.CustomBasemapGallery")
-  class CustomBasemapGallery extends declared(BasemapGallery) {
-
-  }
-
-  export = CustomBasemapGallery;
+      return (
+        <li aria-selected={isSelected} bind={this} class={CSS.item} classes={itemClasses}
+            data-item={item} onkeydown={this._handleClick} onclick={this._handleClick}
+            role="menuitem" tabIndex={tabIndex} title={tooltip}>
+          {loadingIndicator}
+          <div class={CSS.thumbnailFrame}>
+            <img alt="" class={CSS.itemThumbnail} src={thumbnailSource} />
+          </div>
+          <div class={CSS.itemTitle}>{title}</div>
+        </li>
+      );
+    }
   ```
 
-5. From [BasemapGallery SDK](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-BasemapGallery.html), navigate to view file (TSX).
+  TypeScript will complain because some references are missing, let's copy those too
 
-  Copy
+  ```tsx
+    //--------------------------------------------------------------------------
+    //
+    //  Private Methods
+    //
+    //--------------------------------------------------------------------------
 
-  * widget helpers
+    @accessibleHandler()
+    private _handleClick(event: Event) {
+      const item = event.currentTarget["data-item"] as BasemapGalleryItem;
 
-    ```tsx
+      if (item.state === "ready") {
+        this.activeBasemap = item.basemap;
+      }
+    }
+  ```
+
+  ```tsx
     import { accessibleHandler, tsx } from "esri/widgets/support/widget";
-    ```
 
-  * imports & constants
-
-    ```tsx
+    import BasemapGallery = require("esri/widgets/BasemapGallery");
     import BasemapGalleryItem = require("esri/widgets/BasemapGallery/support/BasemapGalleryItem");
 
     const DEFAULT_BASEMAP_IMAGE = require.toUrl("esri/themes/base/images/basemap-toggle-64.svg");
@@ -55,56 +91,93 @@
     };
     ```
 
-  * overridden methods
+    **Note**: we added a custom CSS class to the lookup object used to apply CSS.
 
-    ```tsx
-      //--------------------------------------------------------------------------
-      //
-      //  Private Methods
-      //
-      //--------------------------------------------------------------------------
+6. At this point, our widget's markup has been modified, but no custom CSS has been applied.
 
-      @accessibleHandler()
-      private _handleClick(event: Event) {
-        const item = event.currentTarget["data-item"] as BasemapGalleryItem;
+7. Let's bring in some precooked 8-bit CSS.
 
-        if (item.state === "ready") {
-          this.activeBasemap = item.basemap;
-        }
-      }
+```css
+/* TODO: eliminate !important usage */
+/* TODO: tidy up*/
+.esri-basemap-gallery {
+  color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 700px !important;
+  width: 800px !important;
+  max-height: none !important;
+  background: #1374e8 url("../images/basemap-selection-bg.png") no-repeat;
+}
 
-      private _renderBasemapGalleryItem(item: BasemapGalleryItem): any {
-        const thumbnailUrl = item.get<string>("basemap.thumbnailUrl");
-        const thumbnailSource = thumbnailUrl || DEFAULT_BASEMAP_IMAGE;
-        const title = item.get<string>("basemap.title");
-        const tooltip = item.get<string>("error.message") || title;
-        const tabIndex = item.state === "ready" ? 0 : -1;
-        const isSelected = this.viewModel.basemapEquals(item.basemap, this.activeBasemap);
+.esri-basemap-gallery__item {
+  flex-flow: inherit !important;
+  width: 20% !important;
+  border: none !important;
+  margin: 8px 2% !important;
+  text-align: center !important;
+}
 
-        const itemClasses = {
-          [CSS.selectedItem]: isSelected,
-          [CSS.itemLoading]: item.state === "loading",
-          [CSS.itemError]: item.state === "error"
-        };
+.esri-basemap-gallery__item-container {
+  margin: 50px 50px 0;
+}
 
-        const loadingIndicator = item.state === "loading" ?
-          <div class={CSS.loadingIndicator} key="esri-basemap-gallery_loading-indicator" /> :
-          null;
+.esri-basemap-gallery__item-container {
+  justify-content: space-around;
 
-        return (
-          <li aria-selected={isSelected} bind={this} class={CSS.item} classes={itemClasses}
-              data-item={item} onkeydown={this._handleClick} onclick={this._handleClick}
-              role="menuitem" tabIndex={tabIndex} title={tooltip}>
-            {loadingIndicator}
-            <div class={CSS.thumbnailFrame}>
-              <img alt="" class={CSS.itemThumbnail} src={thumbnailSource} />
-            </div>
-            <div class={CSS.itemTitle}>{title}</div>
-          </li>
-        );
-      }
-    ```
+  flex-flow: row wrap !important;
+  align-items: baseline !important;
+}
 
-6. Override CSS
+.esri-basemap-gallery__item-title {
+  color: #fff;
+  padding: 0;
+  word-break: normal;
+}
+
+.esri-basemap-gallery__item.esri-basemap-gallery__item--selected:focus .esri-basemap-gallery__item-title {
+  color: #fff;
+}
+
+.esri-basemap-gallery__item--selected,
+.esri-basemap-gallery__item.esri-basemap-gallery__item--selected:hover,
+.esri-basemap-gallery__item.esri-basemap-gallery__item--selected:focus {
+  background-color: transparent;
+  color: #fff;
+}
+
+.esri-basemap-gallery__item:hover,
+.esri-basemap-gallery__item:focus,
+.esri-basemap-gallery__item--selected {
+  border: none;
+  color: #fff;
+  background-color: transparent;
+}
+.esri-basemap-gallery__item:hover .esri-basemap-gallery__item-title {
+  color: #fff;
+}
+
+.esri-basemap-gallery__item-thumbnail-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../images/frame.png") no-repeat;
+  height: 115px;
+  width: 115px;
+}
+
+.esri-basemap-gallery__item-thumbnail-frame:hover,
+.esri-basemap-gallery__item-thumbnail-frame--selected {
+  /* TODO: spritify */
+  background: url("../images/frame-selected.png") no-repeat;
+}
+
+.esri-basemap-gallery__item-thumbnail {
+  height: 80px;
+  width: 80px;
+  max-width: inherit !important;
+  margin-bottom: 0 !important;
+}
+```
 
 7. Done!

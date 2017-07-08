@@ -1,8 +1,8 @@
 /// <amd-dependency path="esri/core/tsSupport/declareExtendsHelper" name="__extends" />
 /// <amd-dependency path="esri/core/tsSupport/decorateHelper" name="__decorate" />
 
-import { accessibleHandler, tsx } from "esri/widgets/support/widget";
 import { subclass, declared } from "esri/core/accessorSupport/decorators";
+import { accessibleHandler, tsx } from "esri/widgets/support/widget";
 
 import BasemapGallery = require("esri/widgets/BasemapGallery");
 import BasemapGalleryItem = require("esri/widgets/BasemapGallery/support/BasemapGalleryItem");
