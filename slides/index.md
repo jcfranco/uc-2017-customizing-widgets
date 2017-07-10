@@ -80,7 +80,8 @@
 ### Compiling
 <img src="images/nodejs-new-pantone-black.png" height="80" style="margin-left:10px; margin-right: 10px;"/>
 <img src="images/grunt.svg" height="80" style="margin-left:10px; margin-right: 10px;"/>
-<img src="images/ruby.png" height="80" style="margin-left:10px; margin-right: 10px;"/>
+
+<img src="images/ruby.png" height="40" style="margin-left:10px; margin-right: 10px;"/><!-- .element: class="fragment" data-fragment-index="4" -->
 
 ---
 
@@ -118,7 +119,7 @@ Three main areas:
 
 # Theme Structure
 
-Three main files:
+Three main **variable** files:
 - `base/_colorVariables.scss`
 - `base/_sizes.scss`
 - `base/_type.scss`
@@ -132,14 +133,14 @@ These contain the **default** values.
 ### Default
 ```
 // Inside base/_colorVariables.scss
-$text_color : #6e6e6e !default ;
+$background_color : #fff !default ;
 ```
 
 Any value assignment overrides the `!default` value.
 
 ```
 // Inside esri/themes/[your-theme-name]/main.scss
-$text_color : #0079c1;
+$background_color : #cc4b09;
 ```
 
 But wait...there's more!
@@ -151,10 +152,10 @@ But wait...there's more!
 Override the four main color variables...
 
 ```
-$text_color            : #d1d1d1;
-$background_color      : #242424;
-$anchor_color          : #9e9e8e;
-$button_text_color     : #adadad;
+$text_color            : #fff;    // white
+$background_color      : #cc4b09; // mario
+$anchor_color          : #ffbaaa; // luigi
+$button_text_color     : #ffbaaa; // luigi
 ```
 
 _...then magic!_   <!-- .element: class="fragment" data-fragment-index="1" -->

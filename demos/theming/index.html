@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
-  <title>Extending Widget View</title>
+  <title>Theming Widgets</title>
   <link rel="stylesheet" href="../../../../arcgis-js-api/esri/themes/8-bit/main.css">
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 
@@ -56,7 +56,7 @@
       map = new WebMap({
         portalItem: {
           // id: "243cd45ee6ce4415ac119e44fcaca5bf"
-          id: "a3bc216108414746877d2c367300bde0"
+          id: "4639c44a437a4e18a08cc1a6af0f63a2"
         }
       });
 
@@ -68,7 +68,6 @@
       });
 
       view.then(function(){
-        console.log('view.then');
         // create a layerlist
         layerlist = new LayerList({
           view: view
@@ -80,7 +79,7 @@
           content: layerlist
         });
 
-        view.ui.add(expand, "top-right");
+        view.ui.add(expand, "bottom-left");
       });
 
 
