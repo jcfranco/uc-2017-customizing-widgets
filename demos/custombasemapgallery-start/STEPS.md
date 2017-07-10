@@ -104,65 +104,25 @@ ____________
 7. Let's bring in some precooked 8-bit CSS.
 
   ```css
-  /* TODO: eliminate !important usage */
-  /* TODO: tidy up*/
+  /* overrides BasemapGallery styles */
+  
   .esri-basemap-gallery {
     color: #fff;
     padding-left: 20px;
     padding-right: 20px;
-    height: 700px !important;
-    width: 800px !important;
-    max-height: none !important;
     background: #1374e8 url("../images/basemap-selection-bg.png") no-repeat;
   }
-
-  .esri-basemap-gallery__item {
-    flex-flow: inherit !important;
-    width: 20% !important;
-    border: none !important;
-    margin: 8px 2% !important;
-    text-align: center !important;
-  }
-
+  
   .esri-basemap-gallery__item-container {
     margin: 50px 50px 0;
-  }
-
-  .esri-basemap-gallery__item-container {
     justify-content: space-around;
-
-    flex-flow: row wrap !important;
-    align-items: baseline !important;
   }
-
+  
   .esri-basemap-gallery__item-title {
-    color: #fff;
     padding: 0;
     word-break: normal;
   }
-
-  .esri-basemap-gallery__item.esri-basemap-gallery__item--selected:focus .esri-basemap-gallery__item-title {
-    color: #fff;
-  }
-
-  .esri-basemap-gallery__item--selected,
-  .esri-basemap-gallery__item.esri-basemap-gallery__item--selected:hover,
-  .esri-basemap-gallery__item.esri-basemap-gallery__item--selected:focus {
-    background-color: transparent;
-    color: #fff;
-  }
-
-  .esri-basemap-gallery__item:hover,
-  .esri-basemap-gallery__item:focus,
-  .esri-basemap-gallery__item--selected {
-    border: none;
-    color: #fff;
-    background-color: transparent;
-  }
-  .esri-basemap-gallery__item:hover .esri-basemap-gallery__item-title {
-    color: #fff;
-  }
-
+  
   .esri-basemap-gallery__item-thumbnail-frame {
     display: flex;
     align-items: center;
@@ -171,18 +131,53 @@ ____________
     height: 115px;
     width: 115px;
   }
-
-  .esri-basemap-gallery__item-thumbnail-frame:hover,
-  .esri-basemap-gallery__item-thumbnail-frame--selected {
-    /* TODO: spritify */
-    background: url("../images/frame-selected.png") no-repeat;
-  }
-
+  
   .esri-basemap-gallery__item-thumbnail {
     height: 80px;
     width: 80px;
-    max-width: inherit !important;
-    margin-bottom: 0 !important;
+  }
+  
+  .esri-view .esri-basemap-gallery__item-container {
+    flex-flow: row wrap;
+    align-items: baseline;
+  }
+  
+  .esri-view .esri-basemap-gallery__item {
+    flex-flow: inherit;
+    width: 20%;
+    border: none;
+    margin: 8px 2%;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .esri-view .esri-basemap-gallery__item-title {
+    margin-top: 6px;
+  }
+  
+  .esri-view .esri-basemap-gallery__item-thumbnail {
+    height: 80px;
+    width: 80px;
+    max-width: inherit;
+    margin-bottom: 0;
+  }
+  
+  .esri-basemap-gallery__item-thumbnail-frame:hover,
+  .esri-basemap-gallery__item--selected .esri-basemap-gallery__item-thumbnail-frame {
+    background: url("../images/frame-selected.png") no-repeat;
+  }
+  
+  .esri-view .esri-widget.esri-basemap-gallery {
+    height: 700px;
+    width: 800px;
+    max-height: none;
+  }
+  
+  .esri-view .esri-widget.esri-basemap-gallery .esri-basemap-gallery__item,
+  .esri-view .esri-widget.esri-basemap-gallery .esri-basemap-gallery__item-title {
+    color: #fff;
+    background-color: transparent;
+    border: none;
   }
   ```
 
