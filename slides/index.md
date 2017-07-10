@@ -221,8 +221,7 @@ Widgets are composed of Views & ViewModels
 
 API Exploration
 
-Example: [LayerList](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html) widget
-
+- [LayerList Doc](https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList.html)
 - [LayerList.tsx](https://github.com/Esri/arcgis-js-api/blob/4master/widgets/LayerList.tsx) (View)
 - [LayerList.scss](https://github.com/Esri/arcgis-js-api/blob/4master/themes/base/widgets/_LayerList.scss) (Theme)
 - [LayerList Sample](https://developers.arcgis.com/javascript/latest/sample-code/widgets-layerlist/index.html)
