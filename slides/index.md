@@ -245,7 +245,7 @@ Using...
 Create a custom LayerList view for a Bootstrap app
 
 - [Demo Steps](https://github.com/jcfranco/uc-2017-customizing-widgets/blob/master/demos/layerlist-steps.md)
-- [Demo](https://jcfranco.github.io/uc-2017-customizing-widgets/demos/customlayerlist-start/)
+- [Demo](../demos/customlayerlist-start/)
 
 [![Level 2 demo](./images/level2demo.png)](https://jcfranco.github.io/uc-2017-customizing-widgets/demos/customlayerlist-complete/)
 
