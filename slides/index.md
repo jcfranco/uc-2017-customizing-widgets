@@ -162,7 +162,7 @@ _...then magic!_   <!-- .element: class="fragment" data-fragment-index="1" -->
 
 <img src="./images/8bit/JSAPI-8bit_Magic.png" style="margin: 0;"/>  <!-- .element: class="fragment" data-fragment-index="1" -->
 
-[Theming Guide](https://developers.arcgis.com/javascript/latest/guide/styling/index.html)
+<a href="https://developers.arcgis.com/javascript/latest/guide/styling/index.html#sassy-widgets" target="_blank">Theming Guide</a>
 
 ---
 
