@@ -89,7 +89,7 @@ if (operationalItems) {
 function createItemNode(item, parentNode) {
   var itemNode = $('<li class="list-group-item" />');
 
-  var updatingNode = $('<span class="badge" />');
+  var updatingNode = $('<span class="badge hidden" />');
   itemNode.append(updatingNode);
 
   var updatingIconNode = $('<span class="glyphicon glyphicon-repeat gly-spin" aria-hidden="true" />');
