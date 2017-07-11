@@ -2,7 +2,7 @@
 1. Open the index HTML page and add the script for the jQuery plugin
 
 ```
-  <script src="app/CustomLayerList.js"></script>
+<script src="app/CustomLayerList.js"></script>
 ```
 
 2. request LayerListViewModel
@@ -95,9 +95,7 @@ function createItemNode(item, parentNode) {
   var updatingIconNode = $('<span class="glyphicon glyphicon-repeat gly-spin" aria-hidden="true" />');
   updatingNode.append(updatingIconNode);
 
-  var buttonGroupNode = $('<span />');
-  buttonGroupNode.css("margin-right", "10px");
-  buttonGroupNode.css("display", "inline-block");
+  var buttonGroupNode = $('<span style="margin-right:10px; display:inline-block;" />');
   itemNode.append(buttonGroupNode);
 
   var toggleNode = $('<button type="button" class="btn btn-default btn-sm" />');
@@ -117,8 +115,7 @@ function createItemNode(item, parentNode) {
   itemNode.append(textNode);
 
   // sublayers node
-  var childGroupNode = $('<ul class="list-group hidden" />');
-  childGroupNode.css("margin-top", "15px");
+  var childGroupNode = $('<ul class="list-group hidden" style="margin-top:15px;" />');
   itemNode.append(childGroupNode);
 
   parentNode.append(itemNode);
@@ -171,7 +168,9 @@ toggleNode.on("click", function (event) {
 });
 ```
 
-17. Add watchers for item properties
+17. Check to see if nodes are clickable.
+
+18. Add watchers for item properties
 
 ```
 setText(item, textNode);
@@ -195,7 +194,7 @@ item.watch("visibleAtCurrentScale", function () {
 });
 ```
 
-18. Add node functions
+19. Add node functions
 
 ```
 function setUpdatingClass(item, updatingNode) {
@@ -207,7 +206,7 @@ function setUpdatingClass(item, updatingNode) {
 }
 
 function setText(item, textNode) {
-  textNode.text(item.title);
+  textNode.text(item.title || "Untitled");
 }
 
 function setVisible(item, toggleIconNode) {
@@ -231,9 +230,9 @@ function setMutedClass(item, textNode) {
 }
 ```
 
-19. Custom bootstrap layerlist should be working!
+20. Custom bootstrap layerlist should be working!
 
-20. Optional: Add custom bootstrap theme
+21. Optional: Add custom bootstrap theme
 
 ```
 <!-- Optional theme -->
