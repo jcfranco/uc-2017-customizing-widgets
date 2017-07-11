@@ -23,7 +23,24 @@ ____________
 
 5. Let's copy `_renderBasemapGalleryItem`.
 
+  **methods**
+
   ```tsx
+  //--------------------------------------------------------------------------
+  //
+  //  Private Methods
+  //
+  //--------------------------------------------------------------------------
+
+  @accessibleHandler()
+  private _handleClick(event: Event) {
+    const item = event.currentTarget["data-item"] as BasemapGalleryItem;
+
+    if (item.state === "ready") {
+      this.activeBasemap = item.basemap;
+    }
+  }
+
   private _renderBasemapGalleryItem(item: BasemapGalleryItem): any {
     const thumbnailUrl = item.get<string>("basemap.thumbnailUrl");
     const thumbnailSource = thumbnailUrl || DEFAULT_BASEMAP_IMAGE;
@@ -47,33 +64,14 @@ ____________
           data-item={item} onkeydown={this._handleClick} onclick={this._handleClick}
           role="menuitem" tabIndex={tabIndex} title={tooltip}>
         {loadingIndicator}
-        <div class={CSS.thumbnailFrame}>
-          <img alt="" class={CSS.itemThumbnail} src={thumbnailSource} />
-        </div>
+        <img alt="" class={CSS.itemThumbnail} src={thumbnailSource} />
         <div class={CSS.itemTitle}>{title}</div>
       </li>
     );
   }
   ```
 
-  TypeScript will complain because some references are missing, let's copy those too
-
-  ```tsx
-  //--------------------------------------------------------------------------
-  //
-  //  Private Methods
-  //
-  //--------------------------------------------------------------------------
-
-  @accessibleHandler()
-  private _handleClick(event: Event) {
-    const item = event.currentTarget["data-item"] as BasemapGalleryItem;
-
-    if (item.state === "ready") {
-      this.activeBasemap = item.basemap;
-    }
-  }
-  ```
+  **imports and constants**
 
   ```tsx
   import { accessibleHandler, tsx } from "esri/widgets/support/widget";
@@ -84,24 +82,43 @@ ____________
   const DEFAULT_BASEMAP_IMAGE = require.toUrl("esri/themes/base/images/basemap-toggle-64.svg");
 
   const CSS = {
+    base: "esri-basemap-gallery esri-widget",
+    sourceLoading: "esri-basemap-gallery--source-loading",
     loadingIndicator: "esri-basemap-gallery_loading-indicator",
     item: "esri-basemap-gallery__item",
+    itemContainer: "esri-basemap-gallery__item-container",
     itemTitle: "esri-basemap-gallery__item-title",
     itemThumbnail: "esri-basemap-gallery__item-thumbnail",
     selectedItem: "esri-basemap-gallery__item--selected",
     itemLoading: "esri-basemap-gallery__item--loading",
     itemError: "esri-basemap-gallery__item--error",
+    emptyMessage: "esri-basemap-gallery__empty-message",
 
-    // new custom class
-    thumbnailFrame: "esri-basemap-gallery__item-thumbnail-frame",
+    // common
+    disabled: "esri-disabled"
   };
   ```
 
   **Note**: we added a custom CSS class to the lookup object used to apply CSS.
 
-6. At this point, our widget's markup has been modified, but no custom CSS has been applied.
+6. Customize `_renderBasemapGalleryItem` by wrapping thumbnail image node
 
-7. Let's bring in some precooked 8-bit CSS.
+  ```tsx
+  <div class={CSS.thumbnailFrame}>
+    <img alt="" class={CSS.itemThumbnail} src={thumbnailSource} />
+  </div>
+  ```
+
+  and updating CSS lookup object
+
+  ```tsx
+  // new custom class
+  thumbnailFrame: "esri-basemap-gallery__item-thumbnail-frame"
+  ```
+
+7. At this point, our widget's markup has been modified, but no custom CSS has been applied.
+
+8. Let's bring in some precooked 8-bit CSS.
 
   ```css
   /* overrides BasemapGallery styles */
@@ -181,4 +198,4 @@ ____________
   }
   ```
 
-8. Done!
+9. Done!
