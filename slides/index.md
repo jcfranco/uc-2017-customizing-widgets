@@ -170,6 +170,8 @@ _...then magic!_   <!-- .element: class="fragment" data-fragment-index="1" -->
 
 <!-- .slide: data-background="images/demo-background.png" -->
 
+<a target="_blank" href="http://localhost/jcfranco/uc-2017-customizing-widgets/demos/theming/"><img src="images/theming-screenshot.png" width="600" /></a>
+
 ---
 
 # Level I: Theming Recap

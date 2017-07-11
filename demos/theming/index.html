@@ -6,7 +6,7 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
   <title>Theming Widgets</title>
   <link rel="stylesheet" href="../../../../arcgis-js-api/esri/themes/8-bit/main.css">
-  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet"> -->
 
   <style>
     /*@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);*/
@@ -30,7 +30,6 @@
     };
 
   </script>
-  <!-- <script src="../../../dojo/dojo.js"></script> -->
 
   <script src="https://js.arcgis.com/4.4"></script>
   <script>
@@ -55,16 +54,15 @@
 
       map = new WebMap({
         portalItem: {
-          // id: "243cd45ee6ce4415ac119e44fcaca5bf"
-          id: "4639c44a437a4e18a08cc1a6af0f63a2"
+          id: "1c909e31eebd4d4cb7d314dc3923a690"
         }
       });
 
       view = new MapView({
         container: "view",
-        map: map/*,
-        zoom: 15,
-        center: [-117.1628487109789, 32.706813240831096]*/
+        map: map,
+        zoom: 2,
+        center: [-117.1628487109789, 32.706813240831096]
       });
 
       view.then(function(){
@@ -79,7 +77,7 @@
           content: layerlist
         });
 
-        view.ui.add(expand, "bottom-left");
+        view.ui.add(expand, "top-right");
       });
 
 
