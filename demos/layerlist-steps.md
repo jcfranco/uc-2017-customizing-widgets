@@ -103,7 +103,7 @@ function createItemNode(item, parentNode) {
   var toggleNode = $('<button type="button" class="btn btn-default btn-sm" />');
   buttonGroupNode.append(toggleNode);
 
-  var toggleIconNode = $('<span class="glyphicon glyphicon" aria-hidden="true" />');
+  var toggleIconNode = $('<span class="glyphicon glyphicon glyphicon-eye-open" aria-hidden="true" />');
   toggleNode.append(toggleIconNode);
 
   var expandNode = $('<button type="button" class="btn btn-default btn-sm" />');
@@ -113,6 +113,7 @@ function createItemNode(item, parentNode) {
   expandNode.append(expandIconNode);
 
   var textNode = $('<span />');
+  textNode.text(item.title);
   itemNode.append(textNode);
 
   // sublayers node
@@ -120,19 +121,43 @@ function createItemNode(item, parentNode) {
   childGroupNode.css("margin-top", "15px");
   itemNode.append(childGroupNode);
 
-  // recursively add children to sublayers node
-  addChildren(childGroupNode, expandNode, buttonGroupNode, item.children);
-  item.children.on("change", function () {
-    addChildren(childGroupNode, expandNode, buttonGroupNode, item.children);
-  });
-
   parentNode.append(itemNode);
 }
 ```
 
-14. Check to see if nodes are there now.
+14. Sublayer nodes
 
-15. Setup onclick listeners
+```
+function addChildren(childGroupNode, expandNode, buttonGroupNode, children) {
+  var hiddenClass = "hidden";
+  var buttonGroupClass = "btn-group btn-group-sm";
+
+  childGroupNode.empty();
+
+  if (children.length) {
+    expandNode.removeClass(hiddenClass);
+    buttonGroupNode.addClass(buttonGroupClass);
+  }
+  else {
+    expandNode.addClass(hiddenClass);
+    buttonGroupNode.removeClass(buttonGroupClass);
+  }
+
+  children.forEach(function (child) {
+    createItemNode(child, childGroupNode)
+  });
+}
+
+// recursively add children to sublayers node
+addChildren(childGroupNode, expandNode, buttonGroupNode, item.children);
+item.children.on("change", function () {
+  addChildren(childGroupNode, expandNode, buttonGroupNode, item.children);
+});
+```
+
+15. Check to see if nodes are there now.
+
+16. Setup onclick listeners
 
 ```
 expandNode.on("click", function (event) {
@@ -146,12 +171,13 @@ toggleNode.on("click", function (event) {
 });
 ```
 
-16. Add watchers for item properties
+17. Add watchers for item properties
 
 ```
-function setText(title, textNode) {
-  textNode.text(title || "Untitled Layer");
-}
+setText(item, textNode);
+item.watch("title", function () {
+  setText(item, textNode);
+});
 
 setVisible(item, toggleIconNode);
 item.watch("visible", function () {
@@ -169,7 +195,7 @@ item.watch("visibleAtCurrentScale", function () {
 });
 ```
 
-17. Add node functions
+18. Add node functions
 
 ```
 function setUpdatingClass(item, updatingNode) {
@@ -180,8 +206,8 @@ function setUpdatingClass(item, updatingNode) {
     updatingNode.addClass(hiddenClass);
 }
 
-function setText(title, textNode) {
-  textNode.text(title);
+function setText(item, textNode) {
+  textNode.text(item.title);
 }
 
 function setVisible(item, toggleIconNode) {
@@ -203,31 +229,11 @@ function setMutedClass(item, textNode) {
     textNode.removeClass(mutedClass) :
     textNode.addClass(mutedClass);
 }
-
-function addChildren(childGroupNode, expandNode, buttonGroupNode, children) {
-  var hiddenClass = "hidden";
-  var buttonGroupClass = "btn-group btn-group-sm";
-
-  childGroupNode.empty();
-
-  if (children.length) {
-    expandNode.removeClass(hiddenClass);
-    buttonGroupNode.addClass(buttonGroupClass);
-  }
-  else {
-    expandNode.addClass(hiddenClass);
-    buttonGroupNode.removeClass(buttonGroupClass);
-  }
-
-  children.forEach(function (child) {
-    createItemNode(child, childGroupNode)
-  });
-}
 ```
 
-18. Custom bootstrap layerlist should be working!
+19. Custom bootstrap layerlist should be working!
 
-19. Optional: Add custom bootstrap theme
+20. Optional: Add custom bootstrap theme
 
 ```
 <!-- Optional theme -->
