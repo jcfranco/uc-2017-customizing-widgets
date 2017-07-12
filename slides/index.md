@@ -417,7 +417,7 @@ render() {
 
 # The source code!
 
-## [esriurl.com/customwidgets-uc2017](http://esriurl.com/customwidgets-uc2017)
+## [esriurl.com/customwidgetsuc2017](http://esriurl.com/customwidgetsuc2017)
 
 ---
 
