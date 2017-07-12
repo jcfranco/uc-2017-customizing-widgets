@@ -104,28 +104,21 @@
 
 ---
 
-Before writing a bunch of CSS selectors, let's look at the
-# Theme Structure.
+# Theme Structure
+Avoid writing a bunch of CSS selectors.
+
+<div>Include the theme "core" and override the default values.</div><!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
 # Theme Structure
 
-Three main areas:
-- Color
-- Size
-- Typography
-
----
-
-# Theme Structure
-
-Three main **variable** files:
+The theme core brings in three main **variable** files:
 - `base/_colorVariables.scss`
 - `base/_sizes.scss`
 - `base/_type.scss`
 
-These contain the **default** values.
+These set the **default** values.
 
 ---
 
