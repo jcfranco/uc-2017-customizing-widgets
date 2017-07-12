@@ -87,19 +87,20 @@
 
 # Let's Create a Theme!
 
-1. Create your theme directory.
+1. Create your theme directory. <!-- .element: class="fragment" data-fragment-index="5" -->
   -   `esri/themes/[your-theme-name]/`
-1. Create a Sass file in your theme directory.
+1. Create a Sass file in your theme directory. <!-- .element: class="fragment" data-fragment-index="6" -->
   - `main.scss`
   - `@import "../base/core";`
-1. Compile.
-1. Include the compiled CSS in your app.
+1. Compile. <!-- .element: class="fragment" data-fragment-index="7" -->
+1. Include the compiled CSS in your app. <!-- .element: class="fragment" data-fragment-index="8" -->
 
-
+<div>
 ```
   <!-- in your app -->
   <link rel="stylesheet" href="esri/themes/[your-theme-name]/main.css">
 ```
+</div> <!-- .element: class="fragment" data-fragment-index="8" -->
 
 ---
 
